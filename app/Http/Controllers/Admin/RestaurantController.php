@@ -3,21 +3,21 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Post;
+use App\Models\Restaurant;
 use App\Models\Tag;
-use App\Models\Category;
-use App\Http\Requests\PostRequest;
+use App\Http\Requests\StoreRestaurantRequest;
+use App\Http\Requests\UpdateRestaurantRequest;
 
-class PostController extends Controller
+class RestaurantController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $posts = Post::all();
+        $restaurants = Restaurant::all();
 
-        return view("admin.posts.index", compact("posts"));
+        return view("admin.restaurants.index", compact("restaurants"));
     }
 
     /**
@@ -25,37 +25,36 @@ class PostController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
         $tags = Tag::all();
 
-        return view("admin.posts.create", compact("categories", "tags"));
+        return view("admin.restaurants.create", compact("tags"));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(PostRequest $request)
+    public function store(StoreRestaurantRequest $request)
     {
         $validati = $request->validated();
 
-        $newPost = new Post();
+        $newRestaurant = new Restaurant();
         //ricordate che per usare il fill bisogna popolare fillable nel model
         //altrimenti alcuni dati non verranno scritti ;)
-        $newPost->fill($validati);
-        $newPost->save();
+        $newRestaurant->fill($validati);
+        $newRestaurant->save();
 
         if ($request->tags) {
-            $newPost->tags()->attach($request->tags);
+            $newRestaurant->tags()->attach($request->tags);
         }
 
-        // return redirect()->route("admin.posts.show", $newPost->id);
-        return redirect()->route("admin.posts.index");
+        // return redirect()->route("admin.restaurants.show", $newrestaurant->id);
+        return redirect()->route("admin.restaurants.index");
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Post $post)
+    public function show(Restaurant $restaurant)
     {
         //
     }
@@ -63,7 +62,7 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Post $post)
+    public function edit(Restaurant $restaurant)
     {
         //
     }
@@ -71,7 +70,7 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(PostRequest $request, Post $post)
+    public function update(UpdateRestaurantRequest $request, Restaurant $restaurant)
     {
         //
     }
@@ -79,7 +78,7 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Post $post)
+    public function destroy(Restaurant $restaurant)
     {
         //
     }
