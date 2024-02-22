@@ -3,8 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rules\File;
 
-class PostRequest extends FormRequest
+class UpdateRestaurantRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,9 +24,10 @@ class PostRequest extends FormRequest
     {
         return [
             "name" => ["required", "min:5", "max:50"],
-            "description" => ["required", "min:5", "max:300"],
-            "category_id" => ["nullable", "exists:categories,id"],
-            "tags" => ["exists:tags,id"],
+            "date" => "",
+            "available_tickets" => ["required"],
+            "img" => [File::image(), "nullable"],
+            "tags" => ["nullable"]
         ];
     }
 }
