@@ -50,6 +50,10 @@ class TypeSeeder extends Seeder
                 'name' => 'pizza',
                 'cover_image' => ''
             ],
+            [
+                'name' => 'thailandese',
+                'cover_image' => ''
+            ],
         ];
 
         foreach ($types as $type) {
