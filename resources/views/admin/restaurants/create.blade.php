@@ -3,7 +3,7 @@
 @section('content')
     <div class="container-fluid mt-4">
         <div class="row justify-content-center">
-            <h2>Nuovo post</h2>
+            <h2>Nuovo restaurant</h2>
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -15,7 +15,7 @@
             @endif
         </div>
         <div class="row">
-            <form action="{{ route('admin.posts.store') }}" method="POST">
+            <form action="{{ route('admin.restaurants.store') }}" method="POST">
                 @csrf
                 {{-- name description --}}
                 <div class="mb-3">
@@ -33,16 +33,6 @@
                     @error('description')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
-                </div>
-
-                <div class="mb-3">
-                    <label for="category_id" class="form-label">seleziona una categoria</label>
-                    <select name="category_id" id="category_id" class="form-select">
-                        <option selected value="">seleziona una categoria</option>
-                        @foreach ($categories as $category)
-                            <option value="{{ $category->id }}">{{ $category->name }}</option>
-                        @endforeach
-                    </select>
                 </div>
 
                 <div class="mb-3">
