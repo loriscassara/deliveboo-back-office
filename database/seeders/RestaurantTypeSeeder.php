@@ -7,17 +7,18 @@ use Illuminate\Database\Seeder;
 use App\Models\Restaurant;
 use App\Models\Type;
 use Illuminate\Support\Facades\DB;
+use Faker\Generator as Faker;
 
 class RestaurantTypeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
-    public function run(): void
+    public function run(Faker $faker): void
     {
-        /*for ($i = 0; $i < 10; $i++) {
-            $restaurantId = $this->getRestaurantID();
-            $typeId = $this->getTypeID();
+        for ($i = 0; $i < 10; $i++) {
+            $restaurantId = $faker->randomElement($this->getRestaurantID());
+            $typeId = $faker->randomElement($this->getTypeID());
             $RestaurantsTypes = [
                 [
                     "restaurant_id" => $restaurantId,
@@ -28,9 +29,9 @@ class RestaurantTypeSeeder extends Seeder
             foreach ($RestaurantsTypes as $RestaurantType) {
                 DB::table('restaurant_type')->updateOrInsert($RestaurantType);
             }
-        }*/
+        }
 
-        $restaurant1 = Restaurant::find(1);
+        /*$restaurant1 = Restaurant::find(1);
         $restaurant1->types()->attach([1, 3, 4]);
         $restaurant2 = Restaurant::find(2);
         $restaurant2->types()->attach([4, 3, 1]);
@@ -49,10 +50,10 @@ class RestaurantTypeSeeder extends Seeder
         $restaurant9 = Restaurant::find(9);
         $restaurant9->types()->attach([2,3]);
         $restaurant10 = Restaurant::find(10);
-        $restaurant10->types()->attach([2,3]);
+        $restaurant10->types()->attach([2,3]);*/
     }
 
-    /*private function getRestaurantID() {
+    private function getRestaurantID() {
 
 
         return Restaurant::all()->pluck('id');
@@ -62,5 +63,5 @@ class RestaurantTypeSeeder extends Seeder
 
 
         return Type::all()->pluck('id');
-    }*/
+    }
 }
