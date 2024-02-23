@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules\File;
 
-class UpdateRestaurantRequest extends FormRequest
+class StoreProductRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,11 +23,12 @@ class UpdateRestaurantRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "name" => ["required", "min:5", "max:50"],
-            "date" => "",
-            "available_tickets" => ["required"],
-            "img" => [File::image(), "nullable"],
-            "tags" => ["nullable"]
+            "business_name" => ["required", "min:5", "max:255"],
+            "address" => ["required", "min:5", "max:255"],
+            "P_IVA" => ["required", "unique", "digits:11"],
+            "phone" => ["required", "digits:20"],
+            "cover_image" => [File::image()->min("1")->max("2000")],
+            "types" => []
         ];
     }
 }
