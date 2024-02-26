@@ -23,12 +23,19 @@ class StoreProductRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "business_name" => ["required", "min:5", "max:255"],
-            "address" => ["required", "min:5", "max:255"],
-            "P_IVA" => ["required", "unique", "digits:11"],
-            "phone" => ["required", "digits:20"],
-            "cover_image" => [File::image()->min("1")->max("2000")],
-            "types" => []
+            "restaurant_id" => [],
+            "name" => ["required", "min:5", "max:255"],
+            "ingredients" => ["required", "min:5", "max:255"],
+            "price" => ["required"],
+            "description" => ["required", "min:5", "max:255"],
+            "image" => [File::image()->min("1kb")->max("2000kb")],
+            "visible" => []
         ];
     }
 }
+        // 'name',
+        // 'ingredients',
+        // 'price',
+        // 'description',
+        // 'visible',
+        // 'image'

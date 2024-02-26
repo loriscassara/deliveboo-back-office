@@ -23,11 +23,13 @@ class UpdateProductRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "name" => ["required", "min:5", "max:50"],
-            "date" => "",
-            "available_tickets" => ["required"],
-            "img" => [File::image(), "nullable"],
-            "tags" => ["nullable"]
+            "name" => ["required", "min:5", "max:255"],
+            "ingredients" => ["required", "min:5", "max:255"],
+            "price" => ["required"],
+            "description" => ["required", "min:5", "max:255"],
+            "image" => [File::image(), "nullable"],
+            "visible" => [],
+            "types" => []
         ];
     }
 }
