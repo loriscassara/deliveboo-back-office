@@ -10,8 +10,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/loriscassara">
+    <img src="/public/images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Back-Office Deliveboo</h3>
@@ -47,19 +47,19 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![product-screenshot][product-screenshot]](https://example.com)
 
 Tipi di utenti:
 
-- Utente Visitatore (UI): un utente non registrato che visita il sito.
-- Utente Registrato (UR): un utente che ha effettuato la registrazione come ristoratore.
+-   Utente Visitatore (UI): un utente non registrato che visita il sito.
+-   Utente Registrato (UR): un utente che ha effettuato la registrazione come ristoratore.
 
 Lista delle pagine:
 
-- `Homepage`: offre la possibilità di cliccare sulle tipologie di ristorante e senza il refresh della pagina ottenere una lista ristoranti con le tipologie di appartenenza sotto ogni nome.
-- `Pagina Menù Ristorante Pubblica`: permette di visualizzare il menù di un particolare ristorante. È possibile scegliere i cibi desiderati e relativa quantità per inserirli nel carrello. Blocco con carrello che si popola con i cibi selezionati e quantità.
-- `Pagina carrello/checkout`: permette di modificare le quantità dei cibi e di procedere all’ordine. È possibile acquistare solo da un ristoratore alla volta. Tramite questo pannello è possibile pagare inserendo i dettagli della carta di credito.
-- `Dashboard Utente Registrato`: permette la gestione dei propri dati e l’inserimento dei piatti disponibili.
+-   `Homepage`: offre la possibilità di cliccare sulle tipologie di ristorante e senza il refresh della pagina ottenere una lista ristoranti con le tipologie di appartenenza sotto ogni nome.
+-   `Pagina Menù Ristorante Pubblica`: permette di visualizzare il menù di un particolare ristorante. È possibile scegliere i cibi desiderati e relativa quantità per inserirli nel carrello. Blocco con carrello che si popola con i cibi selezionati e quantità.
+-   `Pagina carrello/checkout`: permette di modificare le quantità dei cibi e di procedere all’ordine. È possibile acquistare solo da un ristoratore alla volta. Tramite questo pannello è possibile pagare inserendo i dettagli della carta di credito.
+-   `Dashboard Utente Registrato`: permette la gestione dei propri dati e l’inserimento dei piatti disponibili.
 
 Client-side Validation: tutti gli input inseriti dall’utente sono controllati client-side (oltre che server-side) per un controllo di veridicità.
 
@@ -73,11 +73,11 @@ La ricerca avviene senza il refresh.
 
 ### Built With
 
-- [![Vue][Vue.js]][Vue-url]
-- [![Laravel][Laravel.com]][Laravel-url]
-- [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-- [![Node][Node.js]][Node-url]
-- [![Vite][Vite.com]][Vite-url]
+-   [![Vue][Vue.js]][Vue-url]
+-   [![Laravel][Laravel.com]][Laravel-url]
+-   [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+-   [![Node][Node.js]][Node-url]
+-   [![Vite][Vite.com]][Vite-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -85,56 +85,56 @@ La ricerca avviene senza il refresh.
 
 ## Getting Started
 
-- Clonare il repository appena creato sul proprio PC.
-- Creare un database.
-- Creare un file .env. Si può procedere copiandolo da .env.example e rinominandolo.
-- Per creare la APP_KEY nel .env, lanciare il comando dedicato, ma prima installare le dipendenze composer.
-  ```sh
-  composer install
-  php artisan key:generate
-  ```
-- Controllare che tutti i dati nel .env siano corretti (attenzione al database).
-- Lanciare migration e seeder iniziali (per la gestione degli utenti ecc..).
-  ```sh
-  php artisan migrate:fresh --seed
-  ```
-- Lanciare il progetto tramite il server built-in.
-  ```sh
-  php artisan serve
-  ```
-- Installare le dipendenze NPM e lanciare il progetto.
-  ```sh
-  npm i
-  npm run dev
-  ```
-- Puntare il browser all'indirizzo mostrato in terminale per controllare che tutto funzioni.
+-   Clonare il repository appena creato sul proprio PC.
+-   Creare un database.
+-   Creare un file .env. Si può procedere copiandolo da .env.example e rinominandolo.
+-   Per creare la APP_KEY nel .env, lanciare il comando dedicato, ma prima installare le dipendenze composer.
+    ```sh
+    composer install
+    php artisan key:generate
+    ```
+-   Controllare che tutti i dati nel .env siano corretti (attenzione al database).
+-   Lanciare migration e seeder iniziali (per la gestione degli utenti ecc..).
+    ```sh
+    php artisan migrate:fresh --seed
+    ```
+-   Lanciare il progetto tramite il server built-in.
+    ```sh
+    php artisan serve
+    ```
+-   Installare le dipendenze NPM e lanciare il progetto.
+    ```sh
+    npm i
+    npm run dev
+    ```
+-   Puntare il browser all'indirizzo mostrato in terminale per controllare che tutto funzioni.
 
 ### Installation
 
 _Riportati i comandi principali per l'installazione del progetto._
 
 1. COMPOSER packages
-   ```sh
-   composer update
-   composer install
-   ```
+    ```sh
+    composer update
+    composer install
+    ```
 2. APP_KEY
-   ```sh
-   php artisan key:generate
-   ```
+    ```sh
+    php artisan key:generate
+    ```
 3. Clone the repo
-   ```sh
-   git clone https://github.com/loriscassara/deliveboo-back-office.git
-   ```
+    ```sh
+    git clone https://github.com/loriscassara/deliveboo-back-office.git
+    ```
 4. NPM packages
-   ```sh
-   npm i
-   npm run dev
-   ```
+    ```sh
+    npm i
+    npm run dev
+    ```
 5. Lanciare il progetto tramite il server built-in.
-   ```sh
-   php artisan serve
-   ```
+    ```sh
+    php artisan serve
+    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -158,9 +158,9 @@ Proj. Team GitHub profiles: [AnaC1997](https://github.com/AnaC1997), [AndreaBart
 
 ## Acknowledgments
 
-- [Sistema per gestire il pagamento](https://www.braintreepayments.com/)
-- [Sistema per la creazione del grafico](https://www.chartjs.org/)
-- [Sistema per invio mail](https://www.youtube.com/watch?v=lsna1S8y1vg)
+-   [Sistema per gestire il pagamento](https://www.braintreepayments.com/)
+-   [Sistema per la creazione del grafico](https://www.chartjs.org/)
+-   [Sistema per invio mail](https://www.youtube.com/watch?v=lsna1S8y1vg)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -179,7 +179,7 @@ Proj. Team GitHub profiles: [AnaC1997](https://github.com/AnaC1997), [AndreaBart
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/Linkedin-2986cc?style=for-the-badge&logo=linkedin&logoColor=FFFFFF
 [linkedin-url]: https://www.linkedin.com/in/loriscassara/
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: /public/images/screenshot.png
 [Node.js]: https://img.shields.io/badge/Node.js-065535?style=for-the-badge&logo=nodedotjs&logoColor=4FC08D
 [Node-url]: https://nodejs.org/en
 [Vite.com]: https://img.shields.io/badge/Vite-bf9000?style=for-the-badge&logo=vite&logoColor=f1c232
