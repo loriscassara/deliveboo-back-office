@@ -82,7 +82,7 @@ class UserSeeder extends Seeder
         foreach ($users as $user) {
             $newUser = new User();
             $newUser->fill($user);
-            //$newUser->password = Hash::make("password");
+            $newUser->password = Hash::make("password");
             $newUser->save();
         }
     }
