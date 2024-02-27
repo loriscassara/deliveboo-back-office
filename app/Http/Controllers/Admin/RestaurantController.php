@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\Product;
 use App\Models\Restaurant;
 use App\Models\Type;
+use illuminate\Support\Facades\Auth;
 
 class RestaurantController extends Controller
 {
@@ -16,7 +17,7 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::where("restaurant_id", Auth::id())->get();
 
 
         return view("admin.products.index", compact("products"));
