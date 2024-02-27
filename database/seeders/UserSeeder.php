@@ -6,6 +6,8 @@ use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+//use Faker\Generator as Faker;
+
 
 class UserSeeder extends Seeder
 {
@@ -14,9 +16,9 @@ class UserSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(/*Faker $faker*/)
     {
-        $users = [
+       $users = [
             [
                 'name' => 'Luca',
                 'surname' => 'Lambiase',
@@ -82,8 +84,17 @@ class UserSeeder extends Seeder
         foreach ($users as $user) {
             $newUser = new User();
             $newUser->fill($user);
-            $newUser->password = Hash::make("password");
+            $newUser->password = Hash::make($user['password']); 
+            //$newUser->password = Hash::make('password'); //Prendeva la parola password come password degli utenti           
             $newUser->save();
         }
+        /*for ($i = 0; $i < 11; $i++) {
+            $newUser = new User();
+            $newUser->name = $faker->name();
+            $newUser->surname = $faker->name();
+            $newUser->email = $faker->email();
+            $newUser->password = Hash::make('password'); //Metodo Hash, crittografa la password
+            $newUser->save();
+        }*/
     }
 }
