@@ -69,12 +69,13 @@
 
                 <div class="mb-3">
                     <label for="types" class="form-label">Cuisines</label>
-                    <select multiple name="types[]" id="" class="form-select">
-                        <option value="">nessun tag</option>
                         @foreach ($types as $type)
-                            <option value="{{ $type->id }}">{{ $type->name }}</option>
+                            <input class="form-check-input" type="checkbox" value="{{ $type->id }}" name="types[]" id="flexCheckDefault">{{ $type->name }}
+                            {{-- <option value="{{ $type->id }}">{{ $type->name }}</option>  --}}
                         @endforeach
-                    </select>
+                    {{-- <select multiple name="types[]" id="" class="form-select">
+
+                    </select> --}}
                 </div>
 
                 <button type="submit" class="btn btn-primary">Add restaurant</button>

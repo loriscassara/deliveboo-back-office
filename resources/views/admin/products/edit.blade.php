@@ -29,6 +29,7 @@
 
                 <div class="mb-3">
                     <label for="image" class="form-label">Product Image</label>
+                    <img class="w-25 d-block" src="{{ asset('storage/' . $product->image) }}" alt="{{ 'immagine' . $product->name }}">
                     <input type="file" class="form-control @error('image') is-invalid @enderror" id="image"
                         name="image" placeholder="choose an image" value="{{ old('image') }}">
                     @error('image')
