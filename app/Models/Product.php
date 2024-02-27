@@ -19,7 +19,7 @@ class Product extends Model
         'image'
     ];
 
-    public function restaurants()
+    public function restaurant()
     {
         return $this->belongsTo(Restaurant::class);
     }

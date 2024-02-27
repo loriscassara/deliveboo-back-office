@@ -54,7 +54,7 @@ class ProductController extends Controller
         $newProduct->fill($data);
         $newProduct->save();
         $request->restaurant_id;
-        $newProduct->restaurants()->attach($request->restaurant_id);
+        $newProduct->restaurant()->associate($request->restaurant_id);
 
 
         // return redirect()->route("admin.Products.show", $newProduct->id);
@@ -103,9 +103,13 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
+        if ($product->image) {
+            Storage::disk("public")->delete($product->image);
+        }
+
         //Cancella immagine dalla cartella storage/app/public/uploads
 
-        Storage::disk("public")->delete('/uploads', $product['image']);
+        //Storage::disk("public")->delete('/uploads', $product['image']);
         $product->delete();
 
         return redirect()->route("admin.products.index");
