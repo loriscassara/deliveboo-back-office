@@ -12,8 +12,8 @@
             <p>{{ $product->price }} €</p>
         </div>
         <div class="row">
-            <a href="{{ route('admin.products.edit', $product->id) }}" class="btn btn-warning">Edit</a>
-            <a href="{{ route('admin.products.index') }}" class="btn btn-primary mt-3">Return to menù</a>
+            <a href="{{ route('admin.products.edit', $product->id) }}" class="btn btn-warning">Modifica</a>
+            <a href="{{ route('admin.products.index') }}" class="btn btn-primary mt-3">Indietro</a>
         </div>
     </div>
 @endsection

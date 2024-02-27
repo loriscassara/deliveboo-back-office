@@ -3,7 +3,7 @@
 @section('content')
     <div class="container-fluid mt-4">
         <div class="row justify-content-center">
-            <h2>New Restaurant</h2>
+            <h2>Nuovo Ristorante</h2>
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -19,7 +19,7 @@
                 @csrf
 
                 <div class="mb-3">
-                    <label for="business_name" class="form-label">Restaurant Name</label>
+                    <label for="business_name" class="form-label">Nome</label>
                     <input type="text" class="form-control @error('business_name') is-invalid @enderror"
                         id="business_name" name="business_name" value="{{ old('business_name') }}">
                     @error('business_name')
@@ -28,7 +28,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="cover_image" class="form-label">Restaurant Image</label>
+                    <label for="cover_image" class="form-label">Immagine Ristorante</label>
                     <input type="file" class="form-control @error('cover_image') is-invalid @enderror" id="cover_image"
                         name="cover_image" placeholder="choose an image" value="{{ old('cover_image') }}">
                     @error('cover_image')
@@ -37,7 +37,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="address" class="form-label">Address</label>
+                    <label for="address" class="form-label">Indirizzo</label>
                     <input type="text" class="form-control @error('address') is-invalid @enderror" id="address"
                         name="address" value="{{ old('address') }}">
                     @error('address')
@@ -57,7 +57,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="phone" class="form-label">Phone number</label>
+                    <label for="phone" class="form-label">Numero di telefono</label>
                     {{-- <input type="text" class="form-control @error('P_IVA') is-invalid @enderror" id="P_IVA"
                         name="P_IVA" value="{{ old('P_IVA') }}"> --}}
                     <input type="text" class="form-control" @error('phone') is-invalid @enderror" id="phone"
@@ -68,7 +68,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="types" class="form-label">Cuisines</label>
+                    <label for="types" class="form-label">Tipo di cucina</label>
                         @foreach ($types as $type)
                             <input class="form-check-input" type="checkbox" value="{{ $type->id }}" name="types[]" id="flexCheckDefault">{{ $type->name }}
                             {{-- <option value="{{ $type->id }}">{{ $type->name }}</option>  --}}
@@ -78,7 +78,7 @@
                     </select> --}}
                 </div>
 
-                <button type="submit" class="btn btn-primary">Add restaurant</button>
+                <button type="submit" class="btn btn-primary">Inserisci</button>
             </form>
         </div>
     </div>

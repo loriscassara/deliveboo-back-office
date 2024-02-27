@@ -3,7 +3,7 @@
 @section('content')
     <div class="container-fluid mt-4">
         <div class="row justify-content-center">
-            <h2>New Product</h2>
+            <h2>Nuovo Prodotto</h2>
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -19,7 +19,7 @@
                 @csrf
                 @method('PUT')
                 <div class="mb-3">
-                    <label for="name" class="form-label">Name</label>
+                    <label for="name" class="form-label">Nome</label>
                     <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
                         name="name" value="{{ old('name') ?? $product->name }}">
                     @error('name')
@@ -28,8 +28,8 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="image" class="form-label">Product Image</label>
-                    <img class="w-25 d-block" src="{{ asset('storage/' . $product->image) }}" alt="{{ 'immagine' . $product->name }}">
+                    <label for="image" class="form-label">Immagine Prodotto</label>
+                    <img class="w-25 d-block" src="{{ asset('storage/' . $product->image) }}" alt="{{ 'Immagine' . ' ' . $product->name }}">
                     <input type="file" class="form-control @error('image') is-invalid @enderror" id="image"
                         name="image" placeholder="choose an image" value="{{ old('image') }}">
                     @error('image')
@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="ingredients" class="form-label">Ingredients</label>
+                    <label for="ingredients" class="form-label">Ingredienti</label>
                     <input type="text" class="form-control @error('ingredients') is-invalid @enderror" id="ingredients"
                         name="ingredients" value="{{ old('ingredients') ?? $product->ingredients }}">
                     @error('ingredients')
@@ -47,7 +47,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="description" class="form-label">Description</label>
+                    <label for="description" class="form-label">Descrizione</label>
                     <input type="text" class="form-control @error('description') is-invalid @enderror" id="description"
                         name="description" value="{{ old('description') ?? $product->description }}">
                     @error('description')
@@ -56,7 +56,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="price" class="form-label">Price</label>
+                    <label for="price" class="form-label">Prezzo</label>
                     <input type="text" class="form-control @error('price') is-invalid @enderror" id="price"
                         name="price" value="{{ old('price') ?? $product->price }}">
                     @error('price')
@@ -64,7 +64,7 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="visible" class="form-label">Visible</label>
+                    <label for="visible" class="form-label">Visibile agli utenti</label>
                     <input type="text" class="form-control @error('visible') is-invalid @enderror" id="visible"
                         name="visible" value="{{ old('visible') ?? $product->visible }}">
                     @error('visible')
@@ -72,7 +72,7 @@
                     @enderror
                 </div>
 
-                <button type="submit" class="btn btn-primary">Save changes</button>
+                <button type="submit" class="btn btn-primary">Salva Modifiche</button>
             </form>
         </div>
     </div>

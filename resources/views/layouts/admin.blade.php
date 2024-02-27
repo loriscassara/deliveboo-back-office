@@ -47,19 +47,19 @@
                             <li class="nav-item">
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.products.index' ? 'bg-secondary' : '' }}"
                                     href="{{ route('admin.products.index') }}">
-                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> My menù
+                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Menu
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.restaurants.create' ? 'bg-secondary' : '' }}"
                                     href="{{ route('admin.restaurants.create') }}">
-                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Add Restaurant
+                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Aggiungi Ristorante
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.products.create' ? 'bg-secondary' : '' }}"
                                     href="{{ route('admin.products.create') }}">
-                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> New Product
+                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Aggiungi Prodotto
                                 </a>
                             </li>
 

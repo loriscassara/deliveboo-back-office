@@ -32,15 +32,14 @@
                         @endif
                         <div class="d-flex justify-content-center">
                             <a href="{{ route('admin.products.show', $product->id) }}"
-                                class="btn btn-primary mx-2 mb-2">Show
-                                details</a>
+                                class="btn btn-primary mx-2 mb-2">Info</a>
                             <a href="{{ route('admin.products.edit', $product->id) }}"
-                                class="btn btn-info mx-2 mb-2">Edit</a>
+                                class="btn btn-info mx-2 mb-2">Modifica</a>
                             <form action="{{ route('admin.products.destroy', $product->id) }}" method="POST"
                                 class="d-inline-block mx-2 mb-2">
                                 @csrf
                                 @method('DELETE')
-                                <input type="submit" value="Delete" class="btn btn-danger"
+                                <input type="submit" value="Elimina" class="btn btn-danger"
                                     onclick="return confirm('Are you sure to delete this?')">
                             </form>
                         </div>
