@@ -18,7 +18,7 @@
                                 <div class="col-md-6">
                                     <input id="name" type="text"
                                         class="form-control @error('name') is-invalid @enderror" name="name"
-                                        value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                        value="{{ old('name') }}" required minlength="3" autocomplete="name" autofocus>
 
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
@@ -35,7 +35,7 @@
                                 <div class="col-md-6">
                                     <input id="surname" type="text"
                                         class="form-control @error('surname') is-invalid @enderror" name="surname"
-                                        value="{{ old('surname') }}" required autocomplete="name" autofocus>
+                                        value="{{ old('surname') }}" required minlength="3" autocomplete="name" autofocus>
 
                                     @error('surname')
                                         <span class="invalid-feedback" role="alert">
@@ -68,12 +68,12 @@
 
                                 <div class="col-md-6">
                                     <input id="password" type="password"
-                                        class="form-control @error('password') is-invalid @enderror" name="password"
-                                        required autocomplete="new-password">
+                                        class="form-control @error('password') is-invalid @enderror" minlength="8"
+                                        name="password" required autocomplete="new-password">
 
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
-                                            <strong>Password non corrispondenti</strong>
+                                            <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
@@ -91,7 +91,7 @@
 
                             <div class="mb-4 row mb-0">
                                 <div class="col-md-6 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button id="submitBtn" type="submit" class="btn btn-primary" onclick="passwordCheck()">
                                         {{ __('Registrati') }}
                                     </button>
                                 </div>
@@ -103,3 +103,18 @@
         </div>
     </div>
 @endsection
+
+<script>
+    // let button = document.getElementById("submitBtn");
+    // if (button) {
+    //     button.addEventListener("click", function passwordCheck() {
+    //         const userPassword = document.getElementById("password").innerHTML;
+    //         const userPasswordConfirm = document.getElementById("password-confirm").innerHTML;
+    //         if (userPassword !== userPasswordConfirm) {
+    //             let error = "password non corrispondenti"
+    //             console.log("password non corrispondenti")
+    //             return error
+    //         }
+    //     })
+    // }
+</script>
