@@ -37,6 +37,7 @@ class RestaurantController extends Controller
     public function store(StoreRestaurantRequest $request, Restaurant $restaurant)
     {
         $data = $request->validated();
+
         if ($request->hasFile("cover_image")) {
 
             if ($restaurant->cover_image) {
@@ -50,7 +51,8 @@ class RestaurantController extends Controller
         $newRestaurant = new Restaurant();
         //ricordate che per usare il fill bisogna popolare fillable nel model
         //altrimenti alcuni dati non verranno scritti ;)
-
+        $userId = Auth::id();
+        $newRestaurant->user_id = $userId;
         $newRestaurant->fill($data);
         $newRestaurant->save();
         if ($request->types) {

@@ -40,6 +40,7 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request, Product $product)
     {
+        $restaurantId = Auth::user()->restaurant->id;
         $data = $request->validated();
         if ($request->hasFile("image")) {
 
@@ -51,14 +52,15 @@ class ProductController extends Controller
         }
         //$percorso = Storage::disk("public")->put('/uploads', $request['image']);
         //$dati_validati["image"] = $percorso;
-        $newProduct = new Product();
         //ricordate che per usare il fill bisogna popolare fillable nel model
         //altrimenti alcuni dati non verranno scritti ;)
+        //Accede all’istanza del ristorante associao all’utente autenticato.
+        $newProduct = new Product();
+        $newProduct->restaurant_id = $restaurantId;
 
         $newProduct->fill($data);
         $newProduct->save();
-        $request->restaurant_id;
-        $newProduct->restaurant()->associate($request->restaurant_id);
+        // $newProduct->restaurant()->associate($request->restaurant_id);
 
 
         // return redirect()->route("admin.Products.show", $newProduct->id);
