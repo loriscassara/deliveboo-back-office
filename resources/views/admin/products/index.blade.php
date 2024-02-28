@@ -39,14 +39,36 @@
                                 class="d-inline-block mx-2 mb-2">
                                 @csrf
                                 @method('DELETE')
-                                <input type="submit" value="Elimina" class="btn btn-danger"
-                                    onclick="return confirm('Are you sure to delete this?')">
+                                <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    Elimina
+                                </button>
                             </form>
                         </div>
 
                     </div>
                 </div>
             @endforeach
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminazione Piatto</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Sei sicuro di voler eliminare questo piatto?</p>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                        <button type="button" class="btn btn-primary">Elimina</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
 
         </div>

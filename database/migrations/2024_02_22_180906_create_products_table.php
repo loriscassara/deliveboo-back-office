@@ -19,8 +19,9 @@ return new class extends Migration
             $table->text("ingredients");
             $table->decimal("price");
             $table->text("description");
-            $table->boolean("visible");
+            $table->boolean("visible")->default(true);
             $table->string("image")->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -30,6 +31,9 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('products');
+        // Schema::dropIfExists('products');
+        Schema::table('products', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
     }
 };
