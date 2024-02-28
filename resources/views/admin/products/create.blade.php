@@ -84,21 +84,6 @@
                         </label>
                     </div>
                 </div>
-
-
-
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-                    <label class="form-check-label" for="visible">Visibile*</label>
-                </div>
-                {{-- <div class="mb-3">
-                    <label for="visible" class="form-label">Visibile agli utenti*</label>
-                    <input type="text" class="form-control @error('visible') is-invalid @enderror" id="visible"
-                        name="visible" value="{{ old('visible') }}" required>
-                    @error('visible')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div> --}}
                 <p><i>*Campo obbligatorio</i></p>
 
                 <button type="submit" class="btn btn-primary">Inserisci</button>
