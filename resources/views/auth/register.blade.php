@@ -84,14 +84,8 @@
                                     class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="password-confirm" type="password"
-                                        class="form-control @error('password') is-invalid @enderror"
+                                    <input id="password-confirm" type="password" class="form-control"
                                         name="password_confirmation" required autocomplete="new-password">
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>Password non corrispondenti</strong>
-                                        </span>
-                                    @enderror
                                 </div>
                             </div>
 
