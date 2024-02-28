@@ -1,25 +1,25 @@
 @extends('layouts.admin')
 
 @section('content')
-    {{-- <div class="content">
-        <div class="container">
-            <div class="row row-cols-1 row-cols-md-3 g-4 py-4">
-                @foreach ($products as $product)
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-header">{{ $product->name }}</div>
-                            <div class="card-body">{{ $product->description }}</div>
-                            <div class="card-body">
+    <div class="container-fluid mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">{{ __('Benvenuto nella tua area riservata!') }}</div>
+
+                    <div class="card-body">
+                        @if (session('status'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('status') }}
                             </div>
-                        </div>
+                        @endif
+
+                        <h3>Da qui puoi aggiungere il tuo ristorante</h3>
+                        <a href="{{ route('admin.restaurants.index') }}" class="btn btn-warning">Aggiungi il tuo
+                            ristorante</a>
                     </div>
-                @endforeach
+                </div>
             </div>
         </div>
-    </div>
- --}}
-
-    <div class="container-fluid mt-4">
-        <h2>Benvenuto nel tuo ristorante</h2>
     </div>
 @endsection

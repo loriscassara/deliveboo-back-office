@@ -1,11 +1,11 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container-fluid mt-4">
+    {{-- <div class="container-fluid mt-4">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Dashboard') }}</div>
+                    <div class="card-header">{{ __('Benvenuto nella tua area riservata!') }}</div>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -14,10 +14,12 @@
                             </div>
                         @endif
 
-                        {{ __('Ti sei loggato!') }}
+                        <h3>Da qui puoi aggiungere il tuo ristorante</h3>
+                        <a href="{{ route('admin.restaurants.index') }}" class="btn btn-warning">Aggiungi il tuo
+                            ristorante</a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 @endsection
