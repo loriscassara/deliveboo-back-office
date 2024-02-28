@@ -7,6 +7,8 @@ use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Product;
+use App\Models\Restaurant;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -15,7 +17,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        //Salvo id ristorante che ha come "user_id" l'utente attualmente loggato. con "get()" non funge con first sì (W3School)
+        $restaurant = Restaurant::select('id')->where('user_id', Auth::id())->first();
+        $products = Product::all()->where("restaurant_id", $restaurant->id);
 
 
         return view("admin.products.index", compact("products"));
