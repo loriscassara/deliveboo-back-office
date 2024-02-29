@@ -46,8 +46,6 @@
                     </div>
                 </div>
             @endforeach
-
-
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
@@ -61,7 +59,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
-                            <form action="{{ route('admin.products.destroy', $currentUser) }}" method="POST"
+                            <form action="{{ route('admin.products.destroy', $product->id) }}" method="POST"
                                 class="d-inline-block mx-2 mb-2">
                                 @csrf
                                 @method('DELETE')
@@ -71,9 +69,6 @@
                     </div>
                 </div>
             </div>
-
-
-
         </div>
     </div>
 @endsection
