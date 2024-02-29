@@ -70,19 +70,22 @@
 
                 <div class="mb-3">
                     <p>Visibile*</p>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    {{-- <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="1" checked>
                         <label class="form-check-label" for="visible">
                             Si
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
-                            checked>
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="0">
                         <label class="form-check-label" for="visible">
                             No
                         </label>
-                    </div>
+                    </div> --}}
+                    <select class="form-control" name="visible" id="visible">
+                        <option value="1" @if (old('visible') == 1) selected @endif>Si</option>
+                        <option value="0" @if (old('visible') == 0) selected @endif>No</option>
+                    </select>
                 </div>
                 <p><i>*Campo obbligatorio</i></p>
 
