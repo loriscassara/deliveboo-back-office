@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Models\Product;
 use App\Models\Restaurant;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -17,13 +18,13 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $currentUser = Auth::id();
         //Salvo id ristorante che ha come "user_id" l'utente attualmente loggato. con "get()" non funge con first sì (W3School)
-        $restaurant = Restaurant::select('id')->where('user_id', $currentUser)->first();
-        $products = Product::all()->where("restaurant_id", $restaurant?->id);
+        $restaurant = DB::table('restaurants')->where('user_id', Auth::id())->value("id");
+        // $products = Product::all()->where("restaurant_id", $restaurant?->id);
+        $products = Product::where("restaurant_id", $restaurant)->get();
 
 
-        return view("admin.products.index", compact("products", "currentUser"));
+        return view("admin.products.index", compact("products"));
     }
 
     /**
