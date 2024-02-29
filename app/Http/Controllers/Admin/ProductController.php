@@ -5,28 +5,43 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Product;
+use App\Models\Restaurant;
+
+
 
 class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+
     public function index()
     {
-        $products = Product::all();
+        $restaurant = Auth::user()->restaurant;
 
+        if ($restaurant === null) {
+            return redirect()->route("admin.restaurants.create");
+        }
+
+        $restaurantId = $restaurant->id;
+
+        $products = Product::where("restaurant_id", $restaurantId)->get();
 
         return view("admin.products.index", compact("products"));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
+
     public function create()
     {
+        $restaurant = Auth::user()->restaurant;
 
+        if ($restaurant === null) {
+            return redirect()->route("admin.restaurants.create");
+        }
 
         return view("admin.products.create");
     }
@@ -47,14 +62,14 @@ class ProductController extends Controller
         }
         //$percorso = Storage::disk("public")->put('/uploads', $request['image']);
         //$dati_validati["image"] = $percorso;
-        $newProduct = new Product();
-        //ricordate che per usare il fill bisogna popolare fillable nel model
-        //altrimenti alcuni dati non verranno scritti ;)
 
+        $restaurantId = Auth::user()->restaurant->id; //Accede all'istanza del ristorante associao all'utente autenticato.
+        $newProduct = new Product();
+        $newProduct->restaurant_id = $restaurantId;
         $newProduct->fill($data);
         $newProduct->save();
-        $request->restaurant_id;
-        $newProduct->restaurants()->attach($request->restaurant_id);
+        //$request->restaurant_id;
+        // $newProduct->restaurants()->associate($request->restaurant_id);
 
 
         // return redirect()->route("admin.Products.show", $newProduct->id);
@@ -105,8 +120,8 @@ class ProductController extends Controller
     {
         //Cancella immagine dalla cartella storage/app/public/uploads
 
-        Storage::disk("public")->delete('/uploads', $product['image']);
-        $product->delete();
+        /* Storage::disk("public")->delete('/uploads', $product['image']);
+         $product->delete();*/
 
         return redirect()->route("admin.products.index");
     }

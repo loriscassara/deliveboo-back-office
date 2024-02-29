@@ -32,5 +32,4 @@ Route::middleware(['auth'])
         Route::resource('products', ProductController::class);
         Route::resource('restaurants', RestaurantController::class);
     });
-
 require __DIR__ . '/auth.php';

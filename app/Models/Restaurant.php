@@ -10,13 +10,15 @@ class Restaurant extends Model
     use HasFactory;
 
     protected $fillable = [
+        "user_id",
         'business_name',
         'address',
         'P_IVA',
         'phone',
         'cover_image'
+        
     ];
-
+   
     public function types()
     {
         return $this->belongsToMany(Type::class);
@@ -30,5 +32,5 @@ class Restaurant extends Model
     public function products()
     {
         return $this->hasMany(Product::class);
-    }
+    }  
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreRestaurantRequest;
+use Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Product;
 use App\Models\Restaurant;
@@ -24,10 +25,15 @@ class RestaurantController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     */
+     */   
     public function create()
     {
         //Type::with(['user'])->find($id);
+        
+        $registeredUsers = Restaurant::pluck("user_id");
+        if ($registeredUsers->contains(Auth::id())) {
+            return redirect()->route("admin.products.index");
+        }
         $types = Type::all();
         return view("admin.restaurants.create", compact("types"));
     }
@@ -46,20 +52,18 @@ class RestaurantController extends Controller
             $percorso = Storage::disk("public")->put('/uploads', $request['cover_image']);
             $data["cover_image"] = $percorso;
         }
+
         //$percorso = Storage::disk("public")->put('/uploads', $request['image']);
         //$dati_validati["image"] = $percorso;
         $newRestaurant = new Restaurant();
-        //ricordate che per usare il fill bisogna popolare fillable nel model
-        //altrimenti alcuni dati non verranno scritti ;)
-
+        $userId = Auth::id();//Ottine l'id dell'utente autenticato
+        $newRestaurant -> user_id = $userId; //Asegna l'id dell'utente autenticato
         $newRestaurant->fill($data);
         $newRestaurant->save();
-        if ($request->types) {
-            $newRestaurant->types()->attach($request->types);
-        }
-
-        // return redirect()->route("admin.Products.show", $newProduct->id);
+        
         return redirect()->route("admin.restaurants.index", $newRestaurant->id);
+
+        
     }
 
     /**
@@ -107,8 +111,8 @@ class RestaurantController extends Controller
     {
         //Cancella immagine dalla cartella storage/app/public/uploads
 
-        Storage::disk("public")->delete('/uploads', $restaurant['cover_image']);
-        $restaurant->delete();
+      /*  Storage::disk("public")->delete('/uploads', $restaurant['cover_image']);
+        $restaurant->delete();*/
 
         return redirect()->route("admin.restaurants.index");
     }

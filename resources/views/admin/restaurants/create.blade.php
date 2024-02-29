@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.proba')
 
 @section('content')
     <div class="container-fluid mt-4">

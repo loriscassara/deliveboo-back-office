@@ -23,7 +23,7 @@ class StoreProductRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "restaurant_id" => [],
+            "restaurant_id" => ["exists:restaurants,id"],
             "name" => ["required", "min:5", "max:255"],
             "ingredients" => ["required", "min:5", "max:255"],
             "price" => ["required"],

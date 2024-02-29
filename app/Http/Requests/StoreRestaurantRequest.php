@@ -23,6 +23,7 @@ class StoreRestaurantRequest extends FormRequest
     public function rules(): array
     {
         return [
+            "user_id"=>["exists:users,id"],
             "business_name" => ["required", "min:5", "max:255"],
             "address" => ["required", "min:5", "max:255"],
             "P_IVA" => ["required", ""],
