@@ -17,8 +17,9 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
-        return view("admin.restaurants.index", compact("products"));
+        $restaurant = Restaurant::select('id')->where('user_id', Auth::id())->first();
+        $products = Product::all()->where("restaurant_id", $restaurant?->id);
+        return view("admin.restaurants.index", compact("products", "restaurant"));
     }
 
     /**
@@ -27,6 +28,10 @@ class RestaurantController extends Controller
     public function create()
     {
         //Type::with(['user'])->find($id);
+        $registeredUsers = Restaurant::pluck("user_id");
+        if ($registeredUsers->contains(Auth::id())) {
+            return redirect()->route("admin.products.index");
+        }
         $types = Type::all();
         return view("admin.restaurants.create", compact("types"));
     }
@@ -60,7 +65,7 @@ class RestaurantController extends Controller
         }
 
         // return redirect()->route("admin.Products.show", $newProduct->id);
-        return redirect()->route("admin.restaurants.index", $newRestaurant->id);
+        return redirect()->route("admin.products.index");
     }
 
     /**
