@@ -66,6 +66,12 @@
                                     <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Aggiungi Ristorante
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.orders.index' ? 'bg-secondary' : '' }}"
+                                    href="{{ route('admin.orders.index') }}">
+                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Ordini
+                                </a>
+                            </li>
                             {{-- @endif --}}
 
                             <li class="nav-item">
@@ -83,7 +89,7 @@
                     </div>
                 </nav>
 
-                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 overflow-y-auto">
                     @yield('content')
                 </main>
             </div>
