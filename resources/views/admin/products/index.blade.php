@@ -35,11 +35,8 @@
                                 class="btn btn-primary mx-2 mb-2">Info</a>
                             <a href="{{ route('admin.products.edit', $product->id) }}"
                                 class="btn btn-info mx-2 mb-2">Modifica</a>
-                            <form action="{{ route('admin.products.destroy', $product->id) }}" method="POST"
-                                class="d-inline-block mx-2 mb-2">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <form>
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     Elimina
                                 </button>
                             </form>
@@ -63,7 +60,12 @@
                         </div>
                         <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
-                        <button type="button" class="btn btn-primary">Elimina</button>
+                        <form action="{{ route('admin.products.destroy', $product->id) }}" method="POST"
+                        class="d-inline-block mx-2 mb-2">
+                        @csrf
+                        @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Elimina</button>
+                        </form>
                         </div>
                     </div>
                 </div>
