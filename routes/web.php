@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController; //<---- Import del controller precedentemente creato!
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\RestaurantController;
 
@@ -31,6 +32,7 @@ Route::middleware(['auth'])
         Route::get('/', [RestaurantController::class, 'index'])->name('dashboard');
         Route::resource('products', ProductController::class);
         Route::resource('restaurants', RestaurantController::class);
+        Route::resource('orders', OrderController::class);
     });
 
 require __DIR__ . '/auth.php';
