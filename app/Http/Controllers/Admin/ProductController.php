@@ -17,12 +17,13 @@ class ProductController extends Controller
      */
     public function index()
     {
+        $currentUser = Auth::id();
         //Salvo id ristorante che ha come "user_id" l'utente attualmente loggato. con "get()" non funge con first sì (W3School)
-        $restaurant = Restaurant::select('id')->where('user_id', Auth::id())->first();
+        $restaurant = Restaurant::select('id')->where('user_id', $currentUser)->first();
         $products = Product::all()->where("restaurant_id", $restaurant?->id);
 
 
-        return view("admin.products.index", compact("products"));
+        return view("admin.products.index", compact("products", "currentUser"));
     }
 
     /**
