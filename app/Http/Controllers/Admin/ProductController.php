@@ -19,7 +19,7 @@ class ProductController extends Controller
     {
         //Salvo id ristorante che ha come "user_id" l'utente attualmente loggato. con "get()" non funge con first sì (W3School)
         $restaurant = Restaurant::select('id')->where('user_id', Auth::id())->first();
-        $products = Product::all()->where("restaurant_id", $restaurant->id);
+        $products = Product::all()->where("restaurant_id", $restaurant?->id);
 
 
         return view("admin.products.index", compact("products"));
