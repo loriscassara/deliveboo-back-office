@@ -31,8 +31,6 @@
                                 alt="{{ $product->name }}">
                         @endif
                         <div class="d-flex justify-content-center">
-                            <a href="{{ route('admin.products.show', $product->id) }}"
-                                class="btn btn-primary mx-2 mb-2">Info</a>
                             <a href="{{ route('admin.products.edit', $product->id) }}"
                                 class="btn btn-info mx-2 mb-2">Modifica</a>
                             <form>

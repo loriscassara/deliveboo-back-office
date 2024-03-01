@@ -14,10 +14,13 @@
                             </div>
                         @endif
 
-
+                        @if(empty($restaurant))
                         <h3>Da qui puoi aggiungere il tuo ristorante</h3>
                         <a href="{{ route('admin.restaurants.create') }}" class="btn btn-warning">Aggiungi il tuo
                             ristorante</a>
+                        @else
+                        <p>Ristorante già creato</p>
+                         @endif
                     </div>
                 </div>
             </div>
