@@ -28,7 +28,7 @@ class StoreRestaurantRequest extends FormRequest
             "P_IVA" => ["required", ""],
             "phone" => ["required", "min:5", "max:255"],
             "cover_image" => [File::image()->min("1kb")->max("2000kb")],
-            "types" => []
+            "types" => ["required"]
         ];
     }
 }

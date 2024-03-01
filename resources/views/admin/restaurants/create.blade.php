@@ -19,9 +19,9 @@
                 @csrf
 
                 <div class="mb-3">
-                    <label for="business_name" class="form-label">Nome</label>
+                    <label for="business_name" class="form-label">Nome*</label>
                     <input type="text" class="form-control @error('business_name') is-invalid @enderror"
-                        id="business_name" name="business_name" value="{{ old('business_name') }}">
+                        id="business_name" name="business_name" value="{{ old('business_name') }}" required minlength="5">
                     @error('business_name')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -37,47 +37,50 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="address" class="form-label">Indirizzo</label>
+                    <label for="address" class="form-label">Indirizzo*</label>
                     <input type="text" class="form-control @error('address') is-invalid @enderror" id="address"
-                        name="address" value="{{ old('address') }}">
+                        name="address" value="{{ old('address') }}"required minlength="5">
                     @error('address')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
 
                 <div class="mb-3">
-                    <label for="P_IVA" class="form-label">P.IVA</label>
+                    <label for="P_IVA" class="form-label">P.IVA*</label>
                     {{-- <input type="text" class="form-control @error('P_IVA') is-invalid @enderror" id="P_IVA"
                         name="P_IVA" value="{{ old('P_IVA') }}"> --}}
-                    <input type="number" class="form-control" @error('P_IVA') is-invalid @enderror" id="P_IVA"
-                        name="P_IVA" min="00000000000" min="99999999999" />
+                    <input type="text" required pattern="[0-9]{11}" inputmode="numeric" minlength="11" maxlength="11"
+                        class="form-control @error('P_IVA') is-invalid @enderror" id="P_IVA" name="P_IVA" />
                     @error('P_IVA')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
 
                 <div class="mb-3">
-                    <label for="phone" class="form-label">Numero di telefono</label>
+                    <label for="phone" class="form-label">Numero di telefono*</label>
                     {{-- <input type="text" class="form-control @error('P_IVA') is-invalid @enderror" id="P_IVA"
                         name="P_IVA" value="{{ old('P_IVA') }}"> --}}
-                    <input type="text" class="form-control" @error('phone') is-invalid @enderror" id="phone"
-                        name="phone" />
+                    <input type="text" required pattern="[0-9]{13}" inputmode="numeric"
+                        class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone" required
+                        minlength="9" maxlength="13" />
                     @error('phone')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
 
                 <div class="mb-3">
-                    <label for="types" class="form-label">Tipo di cucina</label>
-                        @foreach ($types as $type)
-                            <input class="form-check-input" type="checkbox" value="{{ $type->id }}" name="types[]" id="flexCheckDefault">{{ $type->name }}
-                            {{-- <option value="{{ $type->id }}">{{ $type->name }}</option>  --}}
-                        @endforeach
+                    <label for="types" class="form-label d-block">Tipo di cucina**</label>
+                    @foreach ($types as $type)
+                        <input class="form-check-input" type="checkbox" value="{{ $type->id }}" name="types[]"
+                            id="flexCheckDefault" required>{{ $type->name }}
+                        {{-- <option value="{{ $type->id }}">{{ $type->name }}</option>  --}}
+                    @endforeach
                     {{-- <select multiple name="types[]" id="" class="form-select">
 
                     </select> --}}
                 </div>
-
+                <p class="text-body-tertiary"><i>*Campo obbligatorio.</i></p>
+                <p class="text-body-tertiary"><i>**Richieste almeno due tipi di cucina.</i></p>
                 <button type="submit" class="btn btn-primary">Inserisci</button>
             </form>
         </div>

@@ -77,7 +77,7 @@
                         </label>
                     </div>
                 </div>
-                <p><i>*Campo obbligatorio</i></p>
+                <p class="text-body-tertiary"><i>*Campo obbligatorio</i></p>
                 <button type="submit" class="btn btn-primary">Salva Modifiche</button>
             </form>
         </div>
