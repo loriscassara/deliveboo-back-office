@@ -79,4 +79,7 @@
             @endforeach
         </div>
     </div>
+    @if ($orders->count() == 0)
+        <h4>Attualmente non ci sono ordini</h4>
+    @endif
 @endsection

@@ -19,12 +19,13 @@ class ProductController extends Controller
     public function index()
     {
         //Salvo id ristorante che ha come "user_id" l'utente attualmente loggato. con "get()" non funge con first sì (W3School)
-        $restaurant = DB::table('restaurants')->where('user_id', Auth::id())->value("id");
+        $restaurant = Restaurant::select('id')->where('user_id', Auth::id())->first();
+        $restaurant_id = DB::table('restaurants')->where('user_id', Auth::id())->value("id");
         // $products = Product::all()->where("restaurant_id", $restaurant?->id);
-        $products = Product::where("restaurant_id", $restaurant)->get();
+        $products = Product::where("restaurant_id", $restaurant_id)->get();
 
 
-        return view("admin.products.index", compact("products"));
+        return view("admin.products.index", compact("products", "restaurant"));
     }
 
     /**
@@ -32,9 +33,10 @@ class ProductController extends Controller
      */
     public function create()
     {
+        $restaurant = Restaurant::select('id')->where('user_id', Auth::id())->first();
+        $products = Product::select("id")->where('restaurant_id', $restaurant)->first();
 
-
-        return view("admin.products.create");
+        return view("admin.products.create", compact("restaurant"));
     }
 
     /**
@@ -74,6 +76,12 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
+        $restaurant = DB::table('restaurants')->where('user_id', Auth::id())->value("id");
+        $user_products = Product::where("restaurant_id", $restaurant)->get();
+        $products = Product::select("id")->where('restaurant_id', $restaurant)->first();
+        if (!$user_products->contains($product)) {
+            return view("errors.product");
+        }
         return view("admin.products.show", compact("product"));
     }
 
@@ -82,6 +90,12 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
+        $restaurant = DB::table('restaurants')->where('user_id', Auth::id())->value("id");
+        $user_products = Product::where("restaurant_id", $restaurant)->get();
+        $products = Product::select("id")->where('restaurant_id', $restaurant)->first();
+        if (!$user_products->contains($product)) {
+            return view("errors.product");
+        }
         return view("admin.products.edit", compact("product"));
     }
 

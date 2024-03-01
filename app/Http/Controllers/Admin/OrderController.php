@@ -21,7 +21,7 @@ class OrderController extends Controller
         // $currentUser = Auth::id();
         // $orders = Order::all()->where("restaurant_id", $restaurant?->id);
 
-
+        $restaurant = Restaurant::select('id')->where('user_id', Auth::id())->first();
         $loggedUserId = Auth::user()->id;
 
         $restaurantId = Restaurant::where('user_id', $loggedUserId)->value('id');
@@ -32,7 +32,7 @@ class OrderController extends Controller
             ->get();
 
 
-        return view("admin.orders.index", compact("orders"));
+        return view("admin.orders.index", compact("orders", "restaurant"));
     }
 
     /**

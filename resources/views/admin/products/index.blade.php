@@ -37,7 +37,7 @@
                                 class="btn btn-info mx-2 mb-2">Modifica</a>
                             <form>
                                 <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal">
+                                    data-bs-target="#exampleModal{{ $product->id }}">
                                     Elimina
                                 </button>
                             </form>
@@ -45,30 +45,36 @@
 
                     </div>
                 </div>
-            @endforeach
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminazione Piatto</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <p>Sei sicuro di voler eliminare questo piatto?</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
-                            <form action="{{ route('admin.products.destroy', $product->id) }}" method="POST"
-                                class="d-inline-block mx-2 mb-2">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Elimina</button>
-                            </form>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal{{ $product->id }}" tabindex="-1"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminazione Piatto</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Sei sicuro di voler eliminare questo piatto?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                                <form action="{{ route('admin.products.destroy', $product->id) }}" method="POST"
+                                    class="d-inline-block mx-2 mb-2">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Elimina</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            @endforeach
+
         </div>
     </div>
+    @if ($products->count() == 0)
+        <h4>Attualmente non ci sono prodotti</h4>
+    @endif
 @endsection

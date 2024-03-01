@@ -44,35 +44,34 @@
                                     <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Dashboard
                                 </a>
                             </li>
-                            {{-- @if (isset($restaurant->id)) --}}
+                            {{-- @if (isset($products)) --}}
                             <li class="nav-item">
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.products.index' ? 'bg-secondary' : '' }}"
                                     href="{{ route('admin.products.index') }}">
                                     <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Menu
                                 </a>
                             </li>
-
-
-                            <li class="nav-item">
-                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.products.create' ? 'bg-secondary' : '' }}"
-                                    href="{{ route('admin.products.create') }}">
-                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Aggiungi Prodotto
-                                </a>
-                            </li>
-                            {{-- @else --}}
-                            <li class="nav-item">
-                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.restaurants.create' ? 'bg-secondary' : '' }}"
-                                    href="{{ route('admin.restaurants.create') }}">
-                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Aggiungi Ristorante
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.orders.index' ? 'bg-secondary' : '' }}"
-                                    href="{{ route('admin.orders.index') }}">
-                                    <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Ordini
-                                </a>
-                            </li>
-                            {{-- @endif --}}
+                            @if (isset($restaurant->id))
+                                <li class="nav-item">
+                                    <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.products.create' ? 'bg-secondary' : '' }}"
+                                        href="{{ route('admin.products.create') }}">
+                                        <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Aggiungi Prodotto
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.orders.index' ? 'bg-secondary' : '' }}"
+                                        href="{{ route('admin.orders.index') }}">
+                                        <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Ordini
+                                    </a>
+                                </li>
+                            @else
+                                <li class="nav-item">
+                                    <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.restaurants.create' ? 'bg-secondary' : '' }}"
+                                        href="{{ route('admin.restaurants.create') }}">
+                                        <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Aggiungi Ristorante
+                                    </a>
+                                </li>
+                            @endif
 
                             <li class="nav-item">
                                 <a class="nav-link text-white" href="{{ route('logout') }}"
