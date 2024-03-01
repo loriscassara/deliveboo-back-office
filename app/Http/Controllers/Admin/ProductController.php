@@ -35,6 +35,9 @@ class ProductController extends Controller
     {
         $restaurant = Restaurant::select('id')->where('user_id', Auth::id())->first();
         $products = Product::select("id")->where('restaurant_id', $restaurant)->first();
+        if (!$restaurant) {
+            return view("errors.product");
+        }
 
         return view("admin.products.create", compact("restaurant"));
     }
