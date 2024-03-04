@@ -21,8 +21,7 @@
                 <div class="mb-3">
                     <label for="name" class="form-label">Nome*</label>
                     <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
-                        name="name" required minlength="4"
-                        placeholder="Inserisci nome piatto">
+                        name="name" required minlength="4" placeholder="Inserisci nome piatto">
                     @error('name')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -40,8 +39,7 @@
                 <div class="mb-3">
                     <label for="ingredients" class="form-label">Ingredienti*</label>
                     <textarea type="text" class="form-control @error('ingredients') is-invalid @enderror" id="ingredients"
-                        name="ingredients" required minlength="4"
-                        placeholder="Inserisci lista ingredienti"></textarea>
+                        name="ingredients" required minlength="4" placeholder="Inserisci lista ingredienti"></textarea>
                     @error('ingredients')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -49,8 +47,8 @@
 
                 <div class="mb-3">
                     <label for="description" class="form-label">Descrizione*</label>
-                    <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description" rows="5" cols="10"
-                        placeholder="Inserisci una descrizione"></textarea>
+                    <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description"
+                        rows="5" cols="10" placeholder="Inserisci una descrizione"></textarea>
                     @error('description')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror

@@ -53,13 +53,15 @@ class RestaurantTypeSeeder extends Seeder
         $restaurant10->types()->attach([2,3]);*/
     }
 
-    private function getRestaurantID() {
+    private function getRestaurantID()
+    {
 
 
         return Restaurant::all()->pluck('id');
     }
 
-    private function getTypeID() {
+    private function getTypeID()
+    {
 
 
         return Type::all()->pluck('id');

@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
      */
     public function run(/*Faker $faker*/)
     {
-       $users = [
+        $users = [
             [
                 'name' => 'Luca',
                 'surname' => 'Lambiase',
@@ -84,7 +84,7 @@ class UserSeeder extends Seeder
         foreach ($users as $user) {
             $newUser = new User();
             $newUser->fill($user);
-            $newUser->password = Hash::make($user['password']); 
+            $newUser->password = Hash::make($user['password']);
             //$newUser->password = Hash::make('password'); //Prendeva la parola password come password degli utenti           
             $newUser->save();
         }
