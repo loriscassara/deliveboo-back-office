@@ -17,9 +17,12 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        $restaurant = Restaurant::select('id')->where('user_id', Auth::id())->first();
-        $products = Product::select("id")->where('restaurant_id', $restaurant)->first();
-        return view("admin.restaurants.index", compact("products", "restaurant"));
+        //$restaurant = Restaurant::select('id')->where('user_id', Auth::id())->first();
+        //$products = Product::select("id")->where('restaurant_id', $restaurant)->first();
+
+        $restaurants = Restaurant::all();
+        $products = Product::all();
+        return view("admin.restaurants.index", compact("products", "restaurants"));
     }
 
     /**
@@ -79,7 +82,8 @@ class RestaurantController extends Controller
         if (!$restaurants->contains($restaurant)) {
             return view("errors.restaurant");
         }
-        return view("admin.restaurants.index");
+        $products = Product::all();
+        return view("admin.restaurants.index", compact("restaurant", "products"));
     }
 
     /**
