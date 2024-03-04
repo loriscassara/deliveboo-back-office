@@ -17,7 +17,8 @@
                     @endif
 
                     <div class="card-body">
-                        <form action="{{ route('admin.restaurants.store') }}" method="POST" enctype="multipart/form-data">
+                        <form id="restaurant_form" action="{{ route('admin.restaurants.store') }}" method="POST"
+                            enctype="multipart/form-data" onsubmit="return validateForm()">
                             @csrf
 
                             <div class="row mb-4">
@@ -92,6 +93,7 @@
 
                             <div class="row mb-4">
                                 <label for="types" class="form-label d-block">Tipo di cucina**</label>
+                                <div id="error_message" class="text-danger"></div>
                                 <div class="col-md-6">
                                     @foreach ($types as $type)
                                         <div class="form-check form-check-inline">
@@ -114,3 +116,26 @@
         </div>
     </div>
 @endsection
+
+
+
+<script>
+    function validateForm() {
+        let checkboxes = document.querySelectorAll('input[name = "types[]"]');
+        let checkedCount = 0;
+        // Controlla il numero di checkbox selezionati
+        for (let i = 0; i < checkboxes.length; i++) {
+            if (checkboxes[i].checked) {
+                checkedCount++;
+            }
+        }
+        // Se il numero di checkbox selezionati è inferiore a 2, mostra un messaggio di errore nella pagina e restituisci false
+        if (checkedCount < 2) {
+            let errorMessage = document.getElementById('error_message');
+            errorMessage.textContent = "Seleziona almeno due tipi di cucina.";
+            return false;
+        }
+        // Se almeno due checkbox sono stati selezionati, restituisci true per consentire l’invio del modulo
+        return true;
+    }
+</script>
