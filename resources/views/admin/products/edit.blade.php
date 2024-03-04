@@ -26,6 +26,7 @@
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
+
                 <div class="mb-3">
                     <label for="image" class="form-label">Immagine Prodotto</label>
                     <input type="file" class="form-control @error('image') is-invalid @enderror" id="image"
@@ -34,24 +35,25 @@
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
+
                 <div class="mb-3">
                     <label for="ingredients" class="form-label">Ingredienti*</label>
-                    <input type="text" class="form-control @error('ingredients') is-invalid @enderror" id="ingredients"
-                        name="ingredients" value="{{ old('ingredients') ?? $product->ingredients }}" required minlength="4"
-                        placeholder="Inserisci lista ingredienti">
+                    <textarea type="text" class="form-control @error('ingredients') is-invalid @enderror" id="ingredients"
+                        name="ingredients" required minlength="4" placeholder="Inserisci lista ingredienti">{{ old('ingredients') ?? $product->ingredients }}</textarea>
                     @error('ingredients')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
+
                 <div class="mb-3">
                     <label for="description" class="form-label">Descrizione*</label>
-                    <input type="text" class="form-control @error('description') is-invalid @enderror" id="description"
-                        name="description" value="{{ old('description') ?? $product->description }}" required minlength="4"
-                        placeholder="Inserisci una descrizione">
+                    <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description" rows="5" cols="10"
+                        placeholder="Inserisci una descrizione">{{ old('description') ?? $product->description }}</textarea>
                     @error('description')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
+
                 <div class="mb-3">
                     <label for="price" class="form-label">Prezzo*</label>
                     <input type="number" min="0" step=".01"
@@ -61,6 +63,7 @@
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
+
                 <div class="mb-3">
                     <p>Visibile*</p>
                     <div class="form-check">
@@ -77,6 +80,7 @@
                         </label>
                     </div>
                 </div>
+
                 <p class="text-body-tertiary"><i>*Campo obbligatorio</i></p>
                 <button type="submit" class="btn btn-primary">Salva Modifiche</button>
             </form>
