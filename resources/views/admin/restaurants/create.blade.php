@@ -37,6 +37,15 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="description" class="form-label">Descrizione*</label>
+                    <textarea type="text" class="form-control @error('ingredients') is-invalid @enderror" id="description"
+                        name="description" required minlength="4" placeholder="Inserisci lista ingredienti"></textarea>
+                    @error('description')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+
+                <div class="mb-3">
                     <label for="address" class="form-label">Indirizzo*</label>
                     <input type="text" class="form-control @error('address') is-invalid @enderror" id="address"
                         name="address" value="{{ old('address') }}"required minlength="5">
@@ -60,8 +69,8 @@
                     <label for="phone" class="form-label">Numero di telefono*</label>
                     {{-- <input type="text" class="form-control @error('P_IVA') is-invalid @enderror" id="P_IVA"
                         name="P_IVA" value="{{ old('P_IVA') }}"> --}}
-                    <input type="text" required pattern="[0-9]{13}" inputmode="numeric"
-                        class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone" required
+                    <input type="number" required inputmode="numeric"
+                        class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone"
                         minlength="9" maxlength="13" />
                     @error('phone')
                         <div class="invalid-feedback">{{ $message }}</div>
@@ -71,13 +80,17 @@
                 <div class="mb-3">
                     <label for="types" class="form-label d-block">Tipo di cucina**</label>
                     @foreach ($types as $type)
-                        <input class="form-check-input" type="checkbox" value="{{ $type->id }}" name="types[]"
-                            id="flexCheckDefault" required>{{ $type->name }}
-                        {{-- <option value="{{ $type->id }}">{{ $type->name }}</option>  --}}
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="types[]" id="{{ $type->id }}"
+                            value="{{ $type->id }}">
+                        <label class="form-check-label" for="{{ $type->id }}">{{ $type->name}}</label>
+                    </div>    
+                    {{-- <input class="form-check-input" type="checkbox" value="{{ $type->id }}" name="types[]"
+                            id="{{$type->id}}" required>{{ $type->name }} --}}
                     @endforeach
-                    {{-- <select multiple name="types[]" id="" class="form-select">
+                </div>
 
-                    </select> --}}
+
                 </div>
                 <p class="text-body-tertiary"><i>*Campo obbligatorio.</i></p>
                 <p class="text-body-tertiary"><i>**Richieste almeno due tipi di cucina.</i></p>
