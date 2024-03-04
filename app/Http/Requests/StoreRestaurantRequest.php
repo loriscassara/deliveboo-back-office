@@ -24,16 +24,12 @@ class StoreRestaurantRequest extends FormRequest
     {
         return [
             "business_name" => ["required", "min:5", "max:255"],
+            "description" => ["required"],
             "address" => ["required", "min:5", "max:255"],
-            "P_IVA" => ["required", ""],
+            "P_IVA" => ["required"],
             "phone" => ["required", "min:5", "max:255"],
             "cover_image" => [File::image()->min("1kb")->max("2000kb")],
-            "types" => []
+            "types" => ["required", "min:2"] //check after JS 
         ];
     }
 }
-// 'business_name',
-// 'address',
-// 'P_IVA',
-// 'phone',
-// 'cover_image'

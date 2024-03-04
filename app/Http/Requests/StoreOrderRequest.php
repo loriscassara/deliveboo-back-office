@@ -26,7 +26,7 @@ class StoreOrderRequest extends FormRequest
             "surname" => ["required", "min:5", "max:255"],
             "phone" => ["required", "unique", "digits:15"],
             "email" => ["required", "digits:20"],
-            "address" => ["required","min:5", "max:255"],
+            "address" => ["required", "min:5", "max:255"],
             "notes" => [],
             "paid" => [false],
             "total" => ["required"]
