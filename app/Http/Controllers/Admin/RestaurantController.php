@@ -17,12 +17,12 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        //$restaurant = Restaurant::select('id')->where('user_id', Auth::id())->first();
+        $restaurant = Restaurant::select('id')->where('user_id', Auth::id())->first();
         //$products = Product::select("id")->where('restaurant_id', $restaurant)->first();
 
-        $restaurants = Restaurant::all();
+        // $restaurants = Restaurant::all();
         $products = Product::all();
-        return view("admin.restaurants.index", compact("products", "restaurants"));
+        return view("admin.restaurants.index", compact("products", "restaurant"));
     }
 
     /**
