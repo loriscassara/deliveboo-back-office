@@ -55,7 +55,7 @@ class RestaurantTypeSeeder extends Seeder
 
     private function getRestaurantID()
     {
-
+        // ciao
 
         return Restaurant::all()->pluck('id');
     }
