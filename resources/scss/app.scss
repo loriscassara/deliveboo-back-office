@@ -1,1 +1,14 @@
-@import '~bootstrap/scss/bootstrap'
+@import '~bootstrap/scss/bootstrap';
+
+#sidebarMenu {
+    background-color: #a6e36a;
+}
+
+.nav-item:hover,
+.bg-green {
+    background-color: #57A708;
+}
+
+.bg-lightgreen {
+    background-color: #d0ffa1;
+}
