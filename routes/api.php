@@ -33,5 +33,8 @@ Route::get("/products/{id}", [ProductController::class, "show"]);
 
 Route::get('/token', [OrderController::class, "getToken"]);
 Route::post('/token', [OrderController::class, "processPayment"]);
+Route::post('/token', [OrderController::class, "processOrder"]);
+
+
 Route::get('/search', [SearchController::class, "index"]);
 Route::post('/update', [SearchController::class, "update"]);
