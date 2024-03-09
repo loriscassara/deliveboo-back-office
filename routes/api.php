@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\OrderController as AdminOrderController;
+use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\RestaurantController;
 use App\Http\Controllers\Api\SearchController;
@@ -29,5 +31,7 @@ Route::get("/products", [ProductController::class, "index"]);
 
 Route::get("/products/{id}", [ProductController::class, "show"]);
 
+Route::get('/token', [OrderController::class, "getToken"]);
+Route::post('/token', [OrderController::class, "processPayment"]);
 Route::get('/search', [SearchController::class, "index"]);
 Route::post('/update', [SearchController::class, "update"]);
