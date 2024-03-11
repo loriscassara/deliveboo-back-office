@@ -62,7 +62,7 @@ class OrderController extends Controller
             $order->phone = $validatedData['phone'];
             $order->email = $validatedData['email'];
             $order->address = $validatedData['address'];
-            $order->notes = $validatedData['notes'];
+            $order->notes = ($validatedData['notes'])? $validatedData['notes']:" ";
             $order->total = $validatedData['total'];
             $order->paid = $validatedData['paid'];
 
