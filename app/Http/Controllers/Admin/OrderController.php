@@ -35,6 +35,8 @@ class OrderController extends Controller
         return view("admin.orders.index", compact("orders", "restaurant"));
     }
 
+   
+
     /**
      * Show the form for creating a new resource.
      */

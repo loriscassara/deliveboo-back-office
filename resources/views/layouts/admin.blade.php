@@ -21,6 +21,8 @@
 
     <!-- Usando Vite -->
     @vite(['resources/js/app.js'])
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -65,6 +67,12 @@
                                         <i class="fa-solid fa-list fa-xl fa-fw"></i> Ordini
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-black fs-4 py-2" href="/statistiche">
+                                        <i class="fas fa-chart-bar"></i> Statistiche
+                                    </a>
+                                </li>
+    
                             @else
                                 <li class="nav-item">
                                     <a class="nav-link text-black fs-4 py-2 {{ Route::currentRouteName() == 'admin.restaurants.create' ? 'bg-green' : '' }}"

@@ -18,7 +18,11 @@ use App\Http\Controllers\Admin\RestaurantController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
+});
+
+Route::get('/statistiche', function () {
+    return view('admin.orders.statistiche');
 });
 
 Route::middleware(['auth'])
