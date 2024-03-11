@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Models\Type;
-
+use Braintree\Gateway;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -13,9 +13,10 @@ class OrderController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+   
     public function index()
-    {
-        {
+    { {
             $types = Type::with('restaurants')->get();
             $data = [
                 "success" => true,
@@ -30,31 +31,30 @@ class OrderController extends Controller
      */
     public function create()
     {
-        
+
     }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        {
+    { {
             // Validazione dei dati
             $validatedData = $request->validate([
                 'name' => 'required|string',
                 'surname' => 'required|string',
-                'phone' => 'required|string',
+                'phone' => 'required|numeric',
                 'email' => 'required|email',
                 'address' => 'required|string',
                 'notes' => 'nullable|string',
                 'total' => 'required|numeric',
                 'paid' => 'required|',
-                'restaurant_id' => 'required|exists:restaurants,id', // Aggiungi questa riga per validare l'ID del ristorante
-                'products' => 'required|array', // Assicurati che i prodotti siano un array
-                'products.*.id' => 'required|exists:products,id', // Verifica che ogni ID del prodotto esista nella tabella dei prodotti
-                'products.*.quantity' => 'required|integer|min:1', // Verifica che la quantità sia un intero positivo
+                // 'restaurant_id' => 'required|exists:restaurants,id', 
+                'products' => 'required|array',
+                'products.*.id' => 'required|exists:products,id',
+                'products.*.item_quantity' => 'required|integer|min:1',
             ]);
-    
+
             // Crea un nuovo ordine
             $order = new Order();
             $order->name = $validatedData['name'];
@@ -65,21 +65,22 @@ class OrderController extends Controller
             $order->notes = $validatedData['notes'];
             $order->total = $validatedData['total'];
             $order->paid = $validatedData['paid'];
-            $order->restaurant_id = $validatedData['restaurant_id']; // Assegna l'ID del ristorante dall'input
-    
-            // Salva l'ordine nel database
+
+
+
             $order->save();
-    
+
             // Aggiungi i prodotti all'ordine
             foreach ($validatedData['products'] as $product) {
-                $order->products()->attach($product['id'], ['quantity' => $product['quantity']]);
+                $order->products()->attach($product['id'], ['item_quantity' => $product['item_quantity']]);
             }
-    
+
             // Ritorna una risposta JSON per confermare l'avvenuto salvataggio dei dati
             return response()->json(['message' => 'Ordine creato con successo'], 200);
         }
-    
+
     }
+
 
     /**
      * Display the specified resource.

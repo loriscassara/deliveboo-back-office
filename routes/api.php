@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\RestaurantController;
+use App\Http\Controllers\Api\SearchController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -29,9 +30,12 @@ Route::get("/products", [ProductController::class, "index"]);
 
 Route::get("/products/{id}", [ProductController::class, "show"]);
 
+Route::get('/search', [SearchController::class, 'index']);
+
 Route::post('/orders/store', [OrderController::class, 'store']);
 
 Route::resource('orders', OrderController::class);
+
 
 
 
