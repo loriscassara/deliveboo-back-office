@@ -22,7 +22,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Una deliziosa pizza classica con pomodoro fresco e mozzarella di
             bufala',
                 'visible' => true,
-                'image' => 'https://example.com/images/pizza_margherita.jpg',
+                'image' => 'uploads/SH_pizza_fatta_in_casa-1200x800.jpg.webp',
             ],
             [
                 'restaurant_id' => 1,
@@ -32,7 +32,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Una prelibata pasta condita con una crema di uova e guanciale
             croccante',
                 'visible' => true,
-                'image' => 'https://example.com/images/pasta_carbonara.jpg',
+                'image' => 'uploads/carbonara.jpg',
             ],
             [
                 'restaurant_id' => 2,
@@ -42,7 +42,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Un gustoso hamburger con carne di manzo, formaggio fuso e verdure
             fresche',
                 'visible' => true,
-                'image' => 'https://example.com/images/hamburger_deluxe.jpg',
+                'image' => 'uploads/medium_774.jpg',
             ],
             [
                 'restaurant_id' => 2,
@@ -52,7 +52,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Una fresca insalata ispirata alla tradizione greca, con ingredienti
             genuini e saporiti',
                 'visible' => true,
-                'image' => 'https://example.com/images/insalata_greca.jpg',
+                'image' => 'uploads/insalata-greca.webp',
             ],
             [
                 'restaurant_id' => 3,
@@ -62,7 +62,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Una selezione di sushi fresco e prelibato, perfetto per gli amanti della
             cucina giapponese',
                 'visible' => true,
-                'image' => 'https://example.com/images/sushi_misto.jpg',
+                'image' => 'uploads/20-nigiri-mix-piccolo.jpg',
             ],
             [
                 'restaurant_id' => 3,
@@ -72,7 +72,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Una succulenta tagliata di manzo servita su un letto di rucola con
             scaglie di grana padano',
                 'visible' => true,
-                'image' => 'https://example.com/images/tagliata_di_manzo.jpg',
+                'image' => 'uploads/1350x900_tagliata.jpg',
             ],
             [
                 'restaurant_id' => 4,
@@ -82,7 +82,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Un piatto leggero e gustoso, pollo marinato con limone e erbe
             aromatiche, grigliato alla perfezione',
                 'visible' => true,
-                'image' => 'https://example.com/images/pollo_alla_griglia.jpg',
+                'image' => 'uploads/petto-di-pollo-alla-griglia.webp',
             ],
             [
                 'restaurant_id' => 4,
@@ -92,7 +92,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Un classico della cucina italiana, spaghetti al dente conditi con vongole
             fresche e un tocco di aglio e prezzemolo',
                 'visible' => true,
-                'image' => 'https://example.com/images/spaghetti_alle_vongole.jpg',
+                'image' => 'uploads/Spaghetti_all_vongole_copertina-1.jpg',
             ],
             [
                 'restaurant_id' => 5,
@@ -102,7 +102,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Un delizioso taco ispirato alla cucina messicana, con carne di maiale
             marinata e ananas grigliato',
                 'visible' => true,
-                'image' => 'https://example.com/images/taco_al_pastor.jpg',
+                'image' => 'uploads/al-pastor-3507w.jpg',
             ],
             [
                 'restaurant_id' => 5,
@@ -112,7 +112,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Un contorno fresco e gustoso, guacamole fatto in casa con avocado
             maturo, pomodoro fresco e lime',
                 'visible' => true,
-                'image' => 'https://example.com/images/guacamole_fresco.jpg',
+                'image' => 'uploads/gettyimages-478741196-1581700622.jpg',
             ],
             [
                 'restaurant_id' => 5,
@@ -122,7 +122,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Un piatto tradizionale messicano, enchiladas di pollo avvolte in tortillas
             di mais e condite con salsa verde e formaggio',
                 'visible' => true,
-                'image' => 'https://example.com/images/enchiladas_verdes.jpg',
+                'image' => 'uploads/QUESO-FRESCO-ENCHILADAS-VERDES-LOW_WEB-scaled.jpg',
             ],
             [
                 'restaurant_id' => 5,
@@ -132,7 +132,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Una colazione messicana classica, tortillas di mais croccanti immerse
             in salsa rossa e servite con uova e formaggio',
                 'visible' => true,
-                'image' => 'https://example.com/images/chilaquiles.jpg',
+                'image' => 'uploads/chilaquiles-verdes-fried-eggs-hero-01_1-d18b82d02fa54c92a05e66881e906814.jpg',
             ],
             [
                 'restaurant_id' => 5,
@@ -142,7 +142,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Un grande burrito farcito con manzo speziato, fagioli neri, riso,
             formaggio e salsa, poi cotto in forno fino a doratura',
                 'visible' => true,
-                'image' => 'https://example.com/images/burrito_al_forno.jpg',
+                'image' => 'uploads/SH_burrito.jpg.webp',
             ],
             [
                 'restaurant_id' => 5,
@@ -152,7 +152,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Un dolce tradizionale messicano, torta spugnosa imbevuta di tre tipi di
             latte e decorata con panna montata e ciliegie',
                 'visible' => true,
-                'image' => 'https://example.com/images/torta_al_tres_leches.jpg',
+                'image' => 'uploads/Torta-de-las-tres-leches.jpg',
             ],
             [
                 'restaurant_id' => 6,
@@ -162,7 +162,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Una classica pizza italiana con salsa di pomodoro, mozzarella e
             basilico fresco',
                 'visible' => true,
-                'image' => 'https://example.com/images/pizza_margherita.jpg',
+                'image' => 'uploads/SH_pizza_fatta_in_casa-1200x800.jpg.webp',
             ],
             [
                 'restaurant_id' => 6,
@@ -172,7 +172,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Un piatto italiano classico, spaghetti conditi con uova, guanciale,
             parmigiano e pepe nero',
                 'visible' => true,
-                'image' => 'https://example.com/images/pasta_carbonara.jpg',
+                'image' => 'uploads/carbonara.jpg',
             ],
             [
                 'restaurant_id' => 6,
@@ -182,7 +182,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Un comfort food italiano, strati di pasta fresca, ragù di carne,
             besciamella e parmigiano, cotto al forno fino a doratura',
                 'visible' => true,
-                'image' => 'https://example.com/images/lasagna_al_forno.jpg',
+                'image' => 'uploads/Lasagna-al-forno-18112023-butalapasta.it_.jpg',
             ],
             [
                 'restaurant_id' => 6,
@@ -193,7 +193,7 @@ class ProductSeeder extends Seeder
                 'description' => "Un'insalata italiana fresca e semplice, con pomodori maturi, mozzarella
             di bufala, basilico fresco, olio extravergine di oliva e sale",
                 'visible' => true,
-                'image' => 'https://example.com/images/insalata_caprese.jpg',
+                'image' => 'uploads/caprese-mozzarella-pomodori.jpg',
             ],
             [
                 'restaurant_id' => 6,
@@ -203,7 +203,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Un risotto cremoso e profumato, preparato con riso Arborio, funghi
             porcini, brodo di carne, cipolla e parmigiano',
                 'visible' => true,
-                'image' => 'https://example.com/images/risotto_funghi_porcini.jpg',
+                'image' => 'uploads/Risotto-ai-funghi-porcini-25082023-buttalapasta.it_.jpg',
             ],
             [
                 'restaurant_id' => 7,
@@ -213,7 +213,7 @@ class ProductSeeder extends Seeder
                 'description' => 'La classica pizza italiana con salsa di pomodoro, mozzarella e basilico
             fresco',
                 'visible' => true,
-                'image' => 'https://example.com/images/pizza_margherita.jpg',
+                'image' => 'uploads/SH_pizza_fatta_in_casa-1200x800.jpg.webp',
             ],
             [
                 'restaurant_id' => 7,
@@ -223,7 +223,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Una pasta cremosa e deliziosa con pancetta croccante, uova, pecorino
             e pepe nero',
                 'visible' => true,
-                'image' => 'https://example.com/images/pasta_carbonara.jpg',
+                'image' => 'uploads/carbonara.jpg',
             ],
             [
                 'restaurant_id' => 7,
@@ -234,7 +234,7 @@ class ProductSeeder extends Seeder
                 'description' => "Un'insalata fresca e semplice con pomodoro maturo, mozzarella di
             bufala, basilico fresco e condita con olio d\'oliva e aceto balsamico",
                 'visible' => true,
-                'image' => 'https://example.com/images/insalata_caprese.jpg',
+                'image' => 'uploads/caprese-mozzarella-pomodori.jpg',
             ],
             [
                 'restaurant_id' => 7,
@@ -244,7 +244,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Pane tostato condito con pomodoro maturo, aglio, basilico e olio
             d\'oliva',
                 'visible' => true,
-                'image' => 'https://example.com/images/bruschetta_pomodoro.jpg',
+                'image' => 'uploads/SH_bruschetta_al_pomodoro-1200x800.webp',
             ],
             [
                 'restaurant_id' => 7,
@@ -254,7 +254,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Un risotto cremoso e profumato preparato con riso Arborio, funghi
             porcini freschi, cipolla, vino bianco, brodo di verdure e parmigiano',
                 'visible' => true,
-                'image' => 'https://example.com/images/risotto_funghi.jpg',
+                'image' => 'uploads/Risotto-ai-funghi-porcini-25082023-buttalapasta.it_.jpg',
             ],
             [
                 'restaurant_id' => 8,
@@ -264,7 +264,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Un classico hamburger con carne di manzo succulenta, lattuga fresca,
             pomodoro maturo, cipolla croccante, formaggio fuso e salsa speciale',
                 'visible' => true,
-                'image' => 'https://example.com/images/hamburger_classico.jpg',
+                'image' => 'uploads/hamburger-di-carne-americano.jpg',
             ],
             [
                 'restaurant_id' => 8,
@@ -274,7 +274,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Un\'insalata fresca e croccante con lattuga romana, crostini di pane
             croccanti, scaglie di parmigiano e salsa Caesar cremosa',
                 'visible' => true,
-                'image' => 'https://example.com/images/insalata_caesar.jpg',
+                'image' => 'uploads/caesar-salad-ricette-1657882086.jpg',
             ],
             [
                 'restaurant_id' => 8,
@@ -285,7 +285,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Una pietanza italiana classica con spaghetti al dente, salsa bolognese
             fatta in casa con carne macinata, pomodoro maturo, cipolla, carota, sedano e vino rosso',
                 'visible' => true,
-                'image' => 'https://example.com/images/spaghetti_bolognese.jpg',
+                'image' => 'uploads/ragu-bolognese.jpg',
             ],
             [
                 'restaurant_id' => 8,
@@ -297,7 +297,7 @@ class ProductSeeder extends Seeder
             tonno, gamberetti, avocado, avvolto in alga nori e servito con salsa di soia e zenzero
             marinato',
                 'visible' => true,
-                'image' => 'https://example.com/images/sushi_misto.jpg',
+                'image' => 'uploads/20-nigiri-mix-piccolo.jpg',
             ],
             [
                 'restaurant_id' => 8,
@@ -307,7 +307,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Una pasta piccante e saporita con penne al dente, salsa di pomodoro,
             peperoncino piccante, aglio e prezzemolo fresco',
                 'visible' => true,
-                'image' => 'https://example.com/images/penne_arrabbiata.jpg',
+                'image' => 'uploads/AdobeStock_325292847-scaled.webp',
             ],
             [
                 'restaurant_id' => 9,
@@ -317,7 +317,7 @@ class ProductSeeder extends Seeder
                 'description' => 'La classica pizza italiana con salsa di pomodoro fresca, mozzarella di
             bufala, e basilico',
                 'visible' => true,
-                'image' => 'https://example.com/images/pizza_margherita.jpg',
+                'image' => 'uploads/SH_pizza_fatta_in_casa-1200x800.jpg.webp',
             ],
             [
                 'restaurant_id' => 9,
@@ -327,7 +327,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Tacos tradizionali messicani con carne di maiale marinata, ananas,
             cipolla e coriandolo fresco',
                 'visible' => true,
-                'image' => 'https://example.com/images/tacos_al_pastor.jpg',
+                'image' => 'uploads/al-pastor-3507w.jpg',
             ],
             [
                 'restaurant_id' => 9,
@@ -338,7 +338,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Una selezione di sashimi giapponesi freschi con pesce crudo di alta
             qualità, servito con riso e condimenti tradizionali',
                 'visible' => true,
-                'image' => 'https://example.com/images/sushi_sashimi.jpg',
+                'image' => 'uploads/DSC_96.jpg',
             ],
             [
                 'restaurant_id' => 9,
@@ -348,7 +348,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Un classico italiano con spaghetti al dente, pancetta croccante, uova,
             pecorino e pepe nero',
                 'visible' => true,
-                'image' => 'https://example.com/images/pasta_carbonara.jpg',
+                'image' => 'uploads/carbonara.jpg',
             ],
             [
                 'restaurant_id' => 9,
@@ -359,7 +359,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Un hamburger vegano gustoso e sano con patty di fagioli neri, lattuga
             fresca, pomodoro, cipolla rossa, avocado e ketchup vegano',
                 'visible' => true,
-                'image' => 'https://example.com/images/hamburger_vegano.jpg',
+                'image' => 'uploads/SH_burger_veg_tofu.jpg',
             ],
             [
                 'restaurant_id' => 10,
@@ -369,7 +369,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Un classico italiano con spaghetti al dente, pancetta croccante, uova,
             pecorino e pepe nero',
                 'visible' => true,
-                'image' => 'https://example.com/images/spaghetti_carbonara.jpg',
+                'image' => 'uploads/carbonara.jpg',
             ],
             [
                 'restaurant_id' => 10,
@@ -380,7 +380,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Una pizza classica italiana divisa in quattro parti rappresentanti le
             quattro stagioni, con ingredienti freschi e deliziosi',
                 'visible' => true,
-                'image' => 'https://example.com/images/pizza_quattro_stagioni.jpg',
+                'image' => 'uploads/SH_pizza_quattro_stagioni.jpg',
             ],
             [
                 'restaurant_id' => 10,
@@ -391,7 +391,7 @@ class ProductSeeder extends Seeder
                 'description' => 'Una selezione di sushi giapponese fresco misto, con pesce crudo di
             alta qualità, servito con riso e condimenti tradizionali',
                 'visible' => true,
-                'image' => 'https://example.com/images/sushi_misto.jpg',
+                'image' => 'uploads/20-nigiri-mix-piccolo.jpg',
             ],
             [
                 'restaurant_id' => 10,
@@ -403,7 +403,7 @@ class ProductSeeder extends Seeder
             cheddar fuso, lattuga croccante, pomodoro succoso, cetriolo fresco, ketchup e maionese su
             un morbido panino',
                 'visible' => true,
-                'image' => 'https://example.com/images/hamburger_classico.jpg',
+                'image' => 'uploads/hamburger-di-carne-americano.jpg',
             ],
             [
                 'restaurant_id' => 10,
@@ -414,7 +414,7 @@ class ProductSeeder extends Seeder
                 'description' => "Un'insalata fresca e leggera con pomodori succosi, mozzarella di
             bufala, basilico fresco, condita con olio extra vergine di oliva, sale e pepe",
                 'visible' => true,
-                'image' => 'https://example.com/images/insalata_caprese.jpg',
+                'image' => 'uploads/caprese-mozzarella-pomodori.jpg',
             ],
         ];
 
