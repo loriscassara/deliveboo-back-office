@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Admin\OrderController as AdminOrderController;
 use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\RestaurantController;
@@ -36,5 +35,12 @@ Route::post('/token', [OrderController::class, "processPayment"]);
 Route::post('/token', [OrderController::class, "processOrder"]);
 
 
-Route::get('/search', [SearchController::class, "index"]);
-Route::post('/update', [SearchController::class, "update"]);
+Route::get('/search', [SearchController::class, 'index']);
+
+Route::post('/orders/store', [OrderController::class, 'store']);
+
+Route::resource('orders', OrderController::class);
+
+
+
+

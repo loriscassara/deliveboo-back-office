@@ -2,61 +2,115 @@
 
 namespace App\Http\Controllers\Api;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Braintree\Gateway;
 use App\Models\Order;
+use App\Models\Type;
+use Braintree\Gateway;
+use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
-    public function getToken()
-    {
-        $gateway = new Gateway([
-            'environment' => "sandbox",
-            'merchantId' => config('services.braintree.merchant_id'),
-            'publicKey' => config('services.braintree.public_key'),
-            'privateKey' => config('services.braintree.private_key')
-        ]);
+    /**
+     * Display a listing of the resource.
+     */
 
-        $token = $gateway->clientToken()->generate();
-
-        return response()->json(['token' => $token]);
-    }
-
-    public function processPayment(Request $request)
-    {
-
-        // Qui gestisci il pagamento con Braintree come fai già
-
-        // Simulazione di un pagamento fittizio con Braintree
-        $result = new \stdClass();
-        $result->success = true; // Simula un pagamento riuscito
-        // Fine simulazione
-
-        if ($result->success) {
-            return response()->json(['success' => true, 'message' => 'Payment successful']);
-        } else {
-            return response()->json(['success' => false, 'message' => 'Payment failed']);
+   
+    public function index()
+    { {
+            $types = Type::with('restaurants')->get();
+            $data = [
+                "success" => true,
+                "results" => $types
+            ];
+            return response()->json($data);
         }
     }
 
-
-
-
-
-    public function processOrder(Request $request)
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
     {
-        $order = new Order();
-        $order->name = $request->name;
-        $order->surname = $request->surname;
-        $order->phone = $request->phone;
-        $order->email = $request->email;
-        $order->address = $request->address;
-        $order->notes = $request->notes;
-        $order->paid = true; // Presumo che il pagamento sia stato completato
-        $order->total = $request->total; // Totale dell'ordine
-        $order->save();
 
-        return response()->json(['success' => true, 'message' => 'Order successful']);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    { {
+            // Validazione dei dati
+            $validatedData = $request->validate([
+                'name' => 'required|string',
+                'surname' => 'required|string',
+                'phone' => 'required|numeric',
+                'email' => 'required|email',
+                'address' => 'required|string',
+                'notes' => 'nullable|string',
+                'total' => 'required|numeric',
+                'paid' => 'required|',
+                // 'restaurant_id' => 'required|exists:restaurants,id', 
+                'products' => 'required|array',
+                'products.*.id' => 'required|exists:products,id',
+                'products.*.item_quantity' => 'required|integer|min:1',
+            ]);
+
+            // Crea un nuovo ordine
+            $order = new Order();
+            $order->name = $validatedData['name'];
+            $order->surname = $validatedData['surname'];
+            $order->phone = $validatedData['phone'];
+            $order->email = $validatedData['email'];
+            $order->address = $validatedData['address'];
+            $order->notes = ($validatedData['notes'])? $validatedData['notes']:" ";
+            $order->total = $validatedData['total'];
+            $order->paid = $validatedData['paid'];
+
+
+
+            $order->save();
+
+            // Aggiungi i prodotti all'ordine
+            foreach ($validatedData['products'] as $product) {
+                $order->products()->attach($product['id'], ['item_quantity' => $product['item_quantity']]);
+            }
+
+            // Ritorna una risposta JSON per confermare l'avvenuto salvataggio dei dati
+            return response()->json(['message' => 'Ordine creato con successo'], 200);
+        }
+
+    }
+
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        //
     }
 }
