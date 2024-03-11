@@ -29,40 +29,44 @@
     <div id="app">
 
         <div class="container-fluid vh-100">
+            <div id="adminLogo" class="row justify-content-start">
+                <img src="{{ url('/images/back-logo.png') }}" alt="" id="adminImg" class="m-4">
+            </div>
+
             <div class="row h-100 px-0">
-                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block navbar-dark sidebar collapse px-0">
-                    <div class="position-sticky pt-3">
+                <nav id="sidebarMenu" class="col-md-3 colLg17 d-md-block navbar-dark sidebar collapse px-0">
+                    <div class="position-sticky">
                         <img url="\public\images\png-logo.png" alt="">
                         <ul class="nav flex-column">
 
                             <li class="nav-item">
-                                <a class="nav-link text-black fs-4 py-2" href="/">
+                                <a class="nav-link fw-semibold text-black fs-5 pb-3" href="http://localhost:5173">
                                     <i class="fa-solid fa-home-alt fa-xl fa-fw"></i> Home
                                 </a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link text-black fs-4 py-2 {{ Route::currentRouteName() == 'admin.dashboard' ? 'bg-green' : '' }}"
+                                <a class="nav-link fw-semibold text-black fs-5 py-3 {{ Route::currentRouteName() == 'admin.dashboard' ? 'bg-green' : '' }}"
                                     href="{{ route('admin.dashboard') }}">
                                     <i class="fa-solid fa-tachometer-alt fa-xl fa-fw"></i> Dashboard
                                 </a>
                             </li>
                             {{-- @if (isset($products)) --}}
                             <li class="nav-item">
-                                <a class="nav-link text-black fs-4 py-2 {{ Route::currentRouteName() == 'admin.products.index' ? 'bg-green' : '' }}"
+                                <a class="nav-link fw-semibold text-black fs-5 py-3 {{ Route::currentRouteName() == 'admin.products.index' ? 'bg-green' : '' }}"
                                     href="{{ route('admin.products.index') }}">
-                                    <i class="fa-solid fa-burger fa-xl fa-fw"></i> Menu
+                                    <i class="fa-solid fa-burger fa-xl fa-fw"></i> Menù
                                 </a>
                             </li>
                             @if (isset($restaurant->id))
                                 <li class="nav-item">
-                                    <a class="nav-link text-black fs-4 py-2 {{ Route::currentRouteName() == 'admin.products.create' ? 'bg-green' : '' }}"
+                                    <a class="nav-link fw-semibold text-black fs-5 py-3 {{ Route::currentRouteName() == 'admin.products.create' ? 'bg-green' : '' }}"
                                         href="{{ route('admin.products.create') }}">
-                                        <i class="fa-solid fa-square-plus fa-xl fa-fw"></i> Aggiungi Prodotto
+                                        <i class="fa-solid fa-square-plus fa-xl fa-fw"></i> Nuovo Prodotto
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-black fs-4 py-2 {{ Route::currentRouteName() == 'admin.orders.index' ? 'bg-green' : '' }}"
+                                    <a class="nav-link fw-semibold text-black fs-5 py-3 {{ Route::currentRouteName() == 'admin.orders.index' ? 'bg-green' : '' }}"
                                         href="{{ route('admin.orders.index') }}">
                                         <i class="fa-solid fa-list fa-xl fa-fw"></i> Ordini
                                     </a>
@@ -75,7 +79,7 @@
     
                             @else
                                 <li class="nav-item">
-                                    <a class="nav-link text-black fs-4 py-2 {{ Route::currentRouteName() == 'admin.restaurants.create' ? 'bg-green' : '' }}"
+                                    <a class="nav-link fw-semibold text-black fs-5 py-3 {{ Route::currentRouteName() == 'admin.restaurants.create' ? 'bg-green' : '' }}"
                                         href="{{ route('admin.restaurants.create') }}">
                                         <i class="fa-solid fa-square-plus fa-xl fa-fw"></i> Aggiungi Ristorante
                                     </a>
@@ -83,7 +87,7 @@
                             @endif
 
                             <li class="nav-item">
-                                <a class="nav-link text-black fs-4 py-2" href="{{ route('logout') }}"
+                                <a class="nav-link fw-semibold text-black fs-5 py-3" href="{{ route('logout') }}"
                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     <i class="fa-solid fa-sign-out-alt fa-xl fa-fw"></i> {{ __('Logout') }}
                                 </a>

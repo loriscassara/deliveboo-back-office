@@ -4,8 +4,8 @@
     <div class="container-fluid mt-4">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Nuovo Ristorante</div>
+                <div class="card border-green">
+                    <div class="card-header bg-green text-white fw-bold fs-4">Nuovo Ristorante</div>
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
@@ -97,7 +97,7 @@
                                 <div class="col-md-6">
                                     @foreach ($types as $type)
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="checkbox" name="types[]"
+                                            <input class="form-check-input" type="checkbox" id="cuisineCheck" name="types[]"
                                                 id="{{ $type->id }}" value="{{ $type->id }}">
                                             <label class="form-check-label"
                                                 for="{{ $type->id }}">{{ $type->name }}</label>
@@ -107,8 +107,8 @@
                             </div>
 
                             <p class="text-body-tertiary"><i>*Campo obbligatorio.</i></p>
-                            <p class="text-body-tertiary"><i>**Richieste almeno due tipi di cucina.</i></p>
-                            <button type="submit" class="btn btn-primary">Inserisci</button>
+                            <p class="text-body-tertiary"><i>**Richiesto almeno un tipo di cucina.</i></p>
+                            <button type="submit" class="btn addBtn text-white bg-green fw-bold">Inserisci</button>
                         </form>
                     </div>
                 </div>
@@ -129,13 +129,13 @@
                 checkedCount++;
             }
         }
-        // Se il numero di checkbox selezionati è inferiore a 2, mostra un messaggio di errore nella pagina e restituisci false
-        if (checkedCount < 2) {
+        // Se il numero di checkbox selezionati è inferiore a 1, mostra un messaggio di errore nella pagina e restituisci false
+        if (checkedCount < 1) {
             let errorMessage = document.getElementById('error_message');
-            errorMessage.textContent = "Seleziona almeno due tipi di cucina.";
+            errorMessage.textContent = "Seleziona almeno un tipo di cucina.";
             return false;
         }
-        // Se almeno due checkbox sono stati selezionati, restituisci true per consentire l’invio del modulo
+        // Se almeno una checkbox è stata selezionata, restituisci true per consentire l’invio del modulo
         return true;
     }
 </script>
