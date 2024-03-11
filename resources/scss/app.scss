@@ -69,3 +69,20 @@
 .colLg17 {
     width: 17rem;
 }
+
+table {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th {
+    background-color: #57A708 !important;
+}
+
+.table-striped>tbody>tr:nth-child(even)>td {
+    background-color: #aef06d;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td {
+    background-color: rgb(255, 255, 255);
+}
