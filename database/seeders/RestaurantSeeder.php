@@ -21,7 +21,7 @@ class RestaurantSeeder extends Seeder
                 'address' => 'Via Roma, 123',
                 'P_IVA' => '12345678901',
                 'phone' => '0123456789',
-                'cover_image' => ''
+                'cover_image' => 'uploads/ris1.jpg'
             ],
             [
                 'user_id' => '2',
@@ -30,7 +30,7 @@ class RestaurantSeeder extends Seeder
                 'address' => 'Via Garibaldi, 45',
                 'P_IVA' => '98765432109',
                 'phone' => '0123987654',
-                'cover_image' => ''
+                'cover_image' => 'uploads/ris2.webp'
             ],
             [
                 'user_id' => '3',
@@ -39,7 +39,7 @@ class RestaurantSeeder extends Seeder
                 'address' => 'Corso Vittorio Emanuele, 78',
                 'P_IVA' => '56789012345',
                 'phone' => '0123567890',
-                'cover_image' => ''
+                'cover_image' => 'uploads/ris3.jpg'
             ],
             [
                 'user_id' => '4',
@@ -48,7 +48,7 @@ class RestaurantSeeder extends Seeder
                 'address' => 'Via Milano, 12',
                 'P_IVA' => '09876543210',
                 'phone' => '0123098765',
-                'cover_image' => ''
+                'cover_image' => 'uploads/ris4.webp'
             ],
             [
                 'user_id' => '5',
@@ -57,7 +57,7 @@ class RestaurantSeeder extends Seeder
                 'address' => 'Piazza Dante, 3',
                 'P_IVA' => '54321098765',
                 'phone' => '0123543210',
-                'cover_image' => ''
+                'cover_image' => 'uploads/ris5.jpg'
             ],
             [
                 'user_id' => '6',
@@ -66,7 +66,7 @@ class RestaurantSeeder extends Seeder
                 'address' => 'Via Napoli, 10',
                 'P_IVA' => '13579246801',
                 'phone' => '0123135792',
-                'cover_image' => ''
+                'cover_image' => 'uploads/ris6.jpg'
             ],
             [
                 'user_id' => '7',
@@ -75,7 +75,7 @@ class RestaurantSeeder extends Seeder
                 'address' => 'Lungomare Marconi, 20',
                 'P_IVA' => '24680135792',
                 'phone' => '0123246801',
-                'cover_image' => ''
+                'cover_image' => 'uploads/ris7.jpg'
             ],
             [
                 'user_id' => '8',
@@ -84,7 +84,7 @@ class RestaurantSeeder extends Seeder
                 'address' => 'Via Castello, 1',
                 'P_IVA' => '67890123456',
                 'phone' => '0123678901',
-                'cover_image' => ''
+                'cover_image' => 'uploads/ris8.webp'
             ],
             [
                 'user_id' => '9',
@@ -93,7 +93,7 @@ class RestaurantSeeder extends Seeder
                 'address' => 'Via Vesuvio, 15',
                 'P_IVA' => '98701234567',
                 'phone' => '0123987012',
-                'cover_image' => ''
+                'cover_image' => 'uploads/ris9.jpg'
             ],
             [
                 'user_id' => '10',
@@ -102,7 +102,7 @@ class RestaurantSeeder extends Seeder
                 'address' => 'Via delle Rose, 8',
                 'P_IVA' => '67890543210',
                 'phone' => '0123678905',
-                'cover_image' => ''
+                'cover_image' => 'uploads/ris10.jpg'
             ],
         ];
 

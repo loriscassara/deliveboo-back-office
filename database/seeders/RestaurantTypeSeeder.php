@@ -16,7 +16,7 @@ class RestaurantTypeSeeder extends Seeder
      */
     public function run(Faker $faker): void
     {
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 30; $i++) {
             $restaurantId = $faker->randomElement($this->getRestaurantID());
             $typeId = $faker->randomElement($this->getTypeID());
             $RestaurantsTypes = [
