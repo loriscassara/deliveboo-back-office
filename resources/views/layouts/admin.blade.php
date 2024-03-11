@@ -38,7 +38,7 @@
                         <ul class="nav flex-column">
 
                             <li class="nav-item">
-                                <a class="nav-link fw-semibold text-black fs-5 pb-3" href="/">
+                                <a class="nav-link fw-semibold text-black fs-5 pb-3" href="http://localhost:5173/">
                                     <i class="fa-solid fa-home-alt fa-xl fa-fw"></i> Home
                                 </a>
                             </li>
