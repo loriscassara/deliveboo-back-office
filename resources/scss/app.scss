@@ -1,14 +1,92 @@
 @import '~bootstrap/scss/bootstrap';
 
+#welcomeTxt {
+    color: #57A708;
+    font-size: 7rem;
+}
+
+.textOrange {
+    color: #D15007;
+}
+
+.logotext {
+    font-size: 15rem;
+}
+
+.jumbotron {
+    background-image: url(/public/images/indian.png);
+    background-size: cover;
+    background-position: center;
+}
+
+#adminLogo {
+    background-image: url(/public/images/back-banner.png);
+    background-size: 35%;
+    background-position-x: right;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+
+}
+
+#adminImg {
+    width: 25%;
+}
+
 #sidebarMenu {
     background-color: #a6e36a;
 }
 
-.nav-item:hover,
 .bg-green {
     background-color: #57A708;
 }
 
 .bg-lightgreen {
     background-color: #d0ffa1;
+}
+
+.border-green {
+    border: 1px solid #57A708;
+}
+
+#remember:checked,
+#cuisineCheck:checked {
+    background-color: #57A708;
+    border: 1px solid #07c136;
+}
+
+#remember:checked:focus,
+#cuisineCheck:checked:focus {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 255, 0, 0.25);
+    border: 1px solid #07c136;
+}
+
+#remember:focus,
+#cuisineCheck:focus {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(0, 0, 0, 0.25);
+    border: 1px solid #07c136;
+}
+
+.custom-checkbox .custom-control-input:active~.custom-control-label::before {
+    background-color: #C8FFC8;
+    border: 1px solid #07c136;
+}
+
+.nav-item:hover,
+.addBtn:hover,
+#submitBtn:hover,
+#loginBtn:hover,
+#forgotBtn:hover,
+#resetBtn:hover {
+    border: 1px solid #57A708 !important;
+    color: #57A708 !important;
+}
+
+.welcomeBtn:hover {
+    border: 1px solid #57A708 !important;
+    color: #57A708 !important;
+    background-color: white !important;
+}
+
+.colLg17 {
+    width: 17rem;
 }

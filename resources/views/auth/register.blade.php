@@ -1,10 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container mt-4">
+    <div class="container mx-auto">
+        <div class="row justify-content-center">
+            <img src="{{url('/images/back-logo.png')}}" alt="" class="w-75 m-4">
+        </div>    
+
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
+                <div class="card border-green">
                     <div class="card-header bg-green">{{ __('Registrati') }}</div>
 
                     <div class="card-body">
@@ -91,7 +95,7 @@
                             <p class="text-body-tertiary"><i>*Campo obbligatorio</i></p>
                             <div class="mb-4 row mb-0">
                                 <div class="col-md-6 offset-md-4">
-                                    <button id="submitBtn" type="submit" class="btn btn-primary bg-green" onclick="passwordCheck()">
+                                    <button id="submitBtn" type="submit" class="btn text-white bg-green fw-bold" onclick="passwordCheck()">
                                         {{ __('Registrati') }}
                                     </button>
                                 </div>
@@ -105,16 +109,5 @@
 @endsection
 
 <script>
-    // let button = document.getElementById("submitBtn");
-    // if (button) {
-    //     button.addEventListener("click", function passwordCheck() {
-    //         const userPassword = document.getElementById("password").innerHTML;
-    //         const userPasswordConfirm = document.getElementById("password-confirm").innerHTML;
-    //         if (userPassword !== userPasswordConfirm) {
-    //             let error = "password non corrispondenti"
-    //             console.log("password non corrispondenti")
-    //             return error
-    //         }
-    //     })
-    // }
+
 </script>
