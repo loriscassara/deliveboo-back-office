@@ -74,5 +74,6 @@
     </div>
     @if ($products->count() == 0)
         <h4>Attualmente non ci sono prodotti</h4>
+        <a href="{{ route('admin.products.create') }}" class="btn btn-warning">Aggiungi un prodotto</a>
     @endif
 @endsection
