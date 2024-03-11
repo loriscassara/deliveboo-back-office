@@ -1,22 +1,7 @@
 @import '~bootstrap/scss/bootstrap';
 
-#welcomeTxt {
-    color: #57A708;
-    font-size: 7rem;
-}
-
-.textOrange {
-    color: #D15007;
-}
-
 .logotext {
     font-size: 15rem;
-}
-
-.jumbotron {
-    background-image: url(/public/images/indian.png);
-    background-size: cover;
-    background-position: center;
 }
 
 #adminLogo {
@@ -79,12 +64,6 @@
 #resetBtn:hover {
     border: 1px solid #57A708 !important;
     color: #57A708 !important;
-}
-
-.welcomeBtn:hover {
-    border: 1px solid #57A708 !important;
-    color: #57A708 !important;
-    background-color: white !important;
 }
 
 .colLg17 {
