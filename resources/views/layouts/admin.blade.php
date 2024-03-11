@@ -28,9 +28,9 @@
 
         <div class="container-fluid vh-100">
             <div id="adminLogo" class="row justify-content-start">
-                <img src="{{url('/images/back-logo.png')}}" alt="" id="adminImg" class="m-4">
-            </div> 
-            
+                <img src="{{ url('/images/back-logo.png') }}" alt="" id="adminImg" class="m-4">
+            </div>
+
             <div class="row h-100 px-0">
                 <nav id="sidebarMenu" class="col-md-3 colLg17 d-md-block navbar-dark sidebar collapse px-0">
                     <div class="position-sticky">
@@ -38,7 +38,7 @@
                         <ul class="nav flex-column">
 
                             <li class="nav-item">
-                                <a class="nav-link fw-semibold text-black fs-5 pb-3" href="/">
+                                <a class="nav-link fw-semibold text-black fs-5 pb-3" href="http://localhost:5173">
                                     <i class="fa-solid fa-home-alt fa-xl fa-fw"></i> Home
                                 </a>
                             </li>
