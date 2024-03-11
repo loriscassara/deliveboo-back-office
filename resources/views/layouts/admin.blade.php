@@ -53,7 +53,7 @@
                             <li class="nav-item">
                                 <a class="nav-link fw-semibold text-black fs-5 py-3 {{ Route::currentRouteName() == 'admin.products.index' ? 'bg-green' : '' }}"
                                     href="{{ route('admin.products.index') }}">
-                                    <i class="fa-solid fa-burger fa-xl fa-fw"></i> Menu
+                                    <i class="fa-solid fa-burger fa-xl fa-fw"></i> Menù
                                 </a>
                             </li>
                             @if (isset($restaurant->id))
