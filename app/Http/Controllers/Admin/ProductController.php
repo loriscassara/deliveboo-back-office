@@ -120,7 +120,7 @@ class ProductController extends Controller
 
         $product->update($data);
 
-        return redirect()->route("admin.products.show", $product->id);
+        return redirect()->route("admin.products.index", $product->id);
     }
 
     /**
