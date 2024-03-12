@@ -12,6 +12,7 @@
                     <th class="fs-4 text-white" scope="col">Note del cliente</th>
                     <th class="fs-4 text-white" scope="col">Stato pagamento</th>
                     <th class="fs-4 text-white" scope="col">Totale</th>
+                    <th class="fs-4 text-white" scope="col">Data e ora</th>
                 </tr>
             </thead>
             <tbody>
@@ -23,6 +24,7 @@
                         <td class="card-body fs-5">{{ $order->notes }}</td>
                         <td class="card-body fs-5">{{ $order->paid == 1 ? 'Pagato' : 'Non pagato' }}</td>
                         <td class="card-body fs-5">{{ $order->total }} €</td>
+                        <td class="card-body fs-5">{{ $order->created_at }}</td>
                     </tr>
                 @endforeach
             </tbody>
