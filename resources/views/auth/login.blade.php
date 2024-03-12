@@ -7,7 +7,7 @@
         </div>
         
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-sm-12 col-md-8">
                 <div class="card border-green">
                     <div class="card-header bg-green fs-4 fw-bold text-white">{{ __('Login') }}</div>
 

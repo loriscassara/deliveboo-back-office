@@ -29,18 +29,49 @@
     <div id="app">
 
         <div class="container-fluid vh-100">
-            <div id="adminLogo" class="row justify-content-start">
-                <img src="{{ url('/images/back-logo.png') }}" alt="" id="adminImg" class="m-4">
-            </div>
-
+            <div id="adminLogo" class="row">
+                <div class="col-12 d-flex justify-content-between">
+                    <div>
+                        <img src="{{url('/images/back-logo.png')}}" alt="" id="adminImg" class="m-3">
+                    </div>
+    
+                    {{-- mobile nav --}}
+                    <div class="dropdown">
+                        <button class="btn btn-sm text-white d-md-none d-lg-none bg-green py-1 px-2 my-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-sharp fa-solid fa-bars"></i>
+                        </button>
+    
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="http://localhost:5173/"></a>Home</li>
+                            <li><a class="dropdown-item {{ Route::currentRouteName() == 'admin.dashboard' ? 'bg-green' : '' }}"
+                                href="{{ route('admin.dashboard') }}"></a>Dashboard</li>
+                            <li><a class="dropdown-item {{ Route::currentRouteName() == 'admin.products.index' ? 'bg-green' : '' }}"
+                                href="{{ route('admin.products.index') }}"></a>Menù</li>
+                            <li><a class="dropdown-item {{ Route::currentRouteName() == 'admin.products.create' ? 'bg-green' : '' }}"
+                                href="{{ route('admin.products.create') }}"></a>Nuovo Prodotto</li>
+                            <li><a class="dropdown-item {{ Route::currentRouteName() == 'admin.orders.index' ? 'bg-green' : '' }}"
+                                href="{{ route('admin.orders.index') }}"></a>Ordini</li>
+                            <li><a class="dropdown-item {{ Route::currentRouteName() == 'admin.restaurants.create' ? 'bg-green' : '' }}"
+                                href="{{ route('admin.restaurants.create') }}"></a>Aggiungi Ristorante</li>
+                            <li><a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div> 
+            
             <div class="row h-100 px-0">
-                <nav id="sidebarMenu" class="col-md-3 colLg17 d-md-block navbar-dark sidebar collapse px-0">
+                <nav id="sidebarMenu" class="col-md-2 d-md-block sidebar collapse px-0">
                     <div class="position-sticky">
                         <img url="\public\images\png-logo.png" alt="">
                         <ul class="nav flex-column">
 
                             <li class="nav-item">
-                                <a class="nav-link fw-semibold text-black fs-5 pb-3" href="http://localhost:5173">
+                                <a class="nav-link fw-semibold text-black fs-5 pb-3" href="http://localhost:5173/">
                                     <i class="fa-solid fa-home-alt fa-xl fa-fw"></i> Home
                                 </a>
                             </li>

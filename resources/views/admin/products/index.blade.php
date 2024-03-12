@@ -4,14 +4,16 @@
     <div class="container-fluid mt-4">
         <div class="row justify-content-center">
             @foreach ($products as $product)
-                <div class="col-md-4">
-                    <div class="card border-green my-2">
+                <div class="col-sm-12 col-md-3">
+                    <div class="card border-green my-1">
                         <div class="card-header bg-green text-white fw-bold fs-5">{{ $product->name }}</div>
-                        <div class="card-body">{{ $product->description }}</div>
-                        @if ($product->image)
-                            <img src="{{ asset('storage/' . $product->image) }}" class="card-img-top"
-                                alt="{{ $product->name }}">
-                        @endif
+                        <div class="card-body d-flex">
+                            @if ($product->image)
+                            <img src="{{ asset('storage/' . $product->image) }}" class="card-img-top rounded"
+                            alt="{{ $product->name }}">
+                            @endif
+                            <p class="ps-3 pt-5">{{ $product->description }}</p>
+                        </div>
                         <div class="d-flex justify-content-center">
                             <a href="{{ route('admin.products.edit', $product->id) }}"
                                 class="btn btn-info mx-2 mb-2 fw-bold">Modifica</a>
@@ -22,9 +24,9 @@
                                 </button>
                             </form>
                         </div>
-
                     </div>
                 </div>
+
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal{{ $product->id }}" tabindex="-1"
                     aria-labelledby="exampleModalLabel" aria-hidden="true">
