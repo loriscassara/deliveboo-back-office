@@ -20,7 +20,7 @@
                     <div class="card-body">
                         <form action="{{ route('admin.products.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <div class="row mb-4">
+                            <div class="mb-sm-2 mb-md-4 row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">Nome*</label>
                                 <div class="col-md-6">
                                     <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
@@ -31,7 +31,7 @@
                                 </div>
                             </div>
             
-                            <div class="row mb-4">                       
+                            <div class="mb-sm-2 mb-md-4 row">                       
                                 <label for="image" class="col-md-4 col-form-label text-md-right">Immagine Prodotto</label>
                                 <div class="col-md-6">
                                     <input type="file" class="form-control @error('image') is-invalid @enderror" id="image"
@@ -42,7 +42,7 @@
                                 </div>
                             </div>
             
-                            <div class="row mb-4">
+                            <div class="mb-sm-2 mb-md-4 row">
                                 <label for="ingredients" class="col-md-4 col-form-label text-md-right">Ingredienti*</label>
                                 <div class="col-md-6">
                                     <textarea type="text" class="form-control @error('ingredients') is-invalid @enderror" id="ingredients"
@@ -53,7 +53,7 @@
                                 </div>
                             </div>
             
-                            <div class="row mb-4">
+                            <div class="mb-sm-2 mb-md-4 row">
                                 <label for="description" class="col-md-4 col-form-label text-md-right">Descrizione*</label>
                                 <div class="col-md-6">
                                     <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description"
@@ -64,7 +64,7 @@
                                 </div>
                             </div>
             
-                            <div class="row mb-4">
+                            <div class="mb-sm-2 mb-md-4 row">
                                 <label for="price" class="col-md-4 col-form-label text-md-right">Prezzo*</label>
                                 <div class="col-md-6">
                                     <input type="number" min="0" step=".01"
@@ -77,7 +77,7 @@
                             </div>
             
             
-                            <div class="row mb-4">
+                            <div class="mb-sm-2 mb-md-4 row">
                                 <p>Visibile*</p>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">

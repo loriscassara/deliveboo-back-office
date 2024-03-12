@@ -7,7 +7,7 @@
         </div>    
 
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-sm-12 col-md-8">
                 <div class="card border-green">
                     <div class="card-header bg-green">{{ __('Registrati') }}</div>
 
@@ -15,7 +15,7 @@
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
 
-                            <div class="mb-4 row">
+                            <div class="mb-sm-2 mb-md-4 row">
                                 <label for="name"
                                     class="col-md-4 col-form-label text-md-right">{{ __('Nome*') }}</label>
 
@@ -32,7 +32,7 @@
                                 </div>
                             </div>
 
-                            <div class="mb-4 row">
+                            <div class="mb-sm-2 mb-md-4 row">
                                 <label for="surname"
                                     class="col-md-4 col-form-label text-md-right">{{ __('Cognome*') }}</label>
 
@@ -49,7 +49,7 @@
                                 </div>
                             </div>
 
-                            <div class="mb-4 row">
+                            <div class="mb-sm-2 mb-md-4 row">
                                 <label for="email"
                                     class="col-md-4 col-form-label text-md-right">{{ __('E-Mail*') }}</label>
 
@@ -66,7 +66,7 @@
                                 </div>
                             </div>
 
-                            <div class="mb-4 row">
+                            <div class="mb-sm-2 mb-md-4 row">
                                 <label for="password"
                                     class="col-md-4 col-form-label text-md-right">{{ __('Password*') }}</label>
 
@@ -83,7 +83,7 @@
                                 </div>
                             </div>
 
-                            <div class="mb-4 row">
+                            <div class="mb-sm-2 mb-md-4 row">
                                 <label for="password-confirm"
                                     class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password*') }}</label>
 
@@ -93,7 +93,7 @@
                                 </div>
                             </div>
                             <p class="text-body-tertiary"><i>*Campo obbligatorio</i></p>
-                            <div class="mb-4 row mb-0">
+                            <div class="row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button id="submitBtn" type="submit" class="btn text-white bg-green fw-bold" onclick="passwordCheck()">
                                         {{ __('Registrati') }}

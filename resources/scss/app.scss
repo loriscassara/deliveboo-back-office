@@ -14,7 +14,7 @@
 }
 
 #adminImg {
-    width: 25%;
+    width: 30%;
 }
 
 #sidebarMenu {
@@ -61,13 +61,10 @@
 #submitBtn:hover,
 #loginBtn:hover,
 #forgotBtn:hover,
-#resetBtn:hover {
+#resetBtn:hover,
+#saveBtn:hover {
     border: 1px solid #57A708 !important;
     color: #57A708 !important;
-}
-
-.colLg17 {
-    width: 17rem;
 }
 
 table {
@@ -85,4 +82,8 @@ th {
 
 .table-striped>tbody>tr:nth-child(odd)>td {
     background-color: rgb(255, 255, 255);
+}
+
+.card-img-top {
+    width: 48%;
 }
