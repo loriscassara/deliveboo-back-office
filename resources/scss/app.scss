@@ -1,22 +1,7 @@
 @import '~bootstrap/scss/bootstrap';
 
-#welcomeTxt {
-    color: #57A708;
-    font-size: 7rem;
-}
-
-.textOrange {
-    color: #D15007;
-}
-
 .logotext {
     font-size: 15rem;
-}
-
-.jumbotron {
-    background-image: url(/public/images/indian.png);
-    background-size: cover;
-    background-position: center;
 }
 
 #adminLogo {
@@ -29,7 +14,7 @@
 }
 
 #adminImg {
-    width: 25%;
+    width: 40%;
 }
 
 #sidebarMenu {
@@ -76,17 +61,29 @@
 #submitBtn:hover,
 #loginBtn:hover,
 #forgotBtn:hover,
-#resetBtn:hover {
+#resetBtn:hover,
+#saveBtn:hover {
     border: 1px solid #57A708 !important;
     color: #57A708 !important;
 }
 
-.welcomeBtn:hover {
-    border: 1px solid #57A708 !important;
-    color: #57A708 !important;
-    background-color: white !important;
+table {
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-.colLg17 {
-    width: 17rem;
+th {
+    background-color: #57A708 !important;
+}
+
+.table-striped>tbody>tr:nth-child(even)>td {
+    background-color: #aef06d;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td {
+    background-color: rgb(255, 255, 255);
+}
+
+.card-img-top {
+    width: 48%;
 }
