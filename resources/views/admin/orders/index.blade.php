@@ -13,6 +13,7 @@
                     <th class="fs-4 text-white" scope="col">Stato pagamento</th>
                     <th class="fs-4 text-white" scope="col">Totale</th>
                     <th class="fs-4 text-white" scope="col">Data e ora</th>
+                    <th class="fs-4 text-white" scope="col"></th>
                 </tr>
             </thead>
             <tbody>
@@ -25,6 +26,7 @@
                         <td class="card-body fs-5">{{ $order->paid == 1 ? 'Pagato' : 'Non pagato' }}</td>
                         <td class="card-body fs-5">{{ $order->total }} €</td>
                         <td class="card-body fs-5">{{ $order->created_at }}</td>
+                        <td class="card-body fs-5"><a style="color: black" href="{{route('admin.orders.show',$order->id)}}"><i class="fas fa-eye"></i></a></td>
                     </tr>
                 @endforeach
             </tbody>
