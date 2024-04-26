@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
+use App\Models\Order_product;
+use App\Models\Product;
 use App\Models\Restaurant;
 use Illuminate\Support\Facades\Auth;
 
@@ -35,7 +37,7 @@ class OrderController extends Controller
         return view("admin.orders.index", compact("orders", "restaurant"));
     }
 
-   
+
 
     /**
      * Show the form for creating a new resource.
@@ -56,14 +58,28 @@ class OrderController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Order $order)
-    {
-        //
-    }
 
-    /**
+
+     /**
      * Show the form for editing the specified resource.
      */
+     public function show($id)
+     {
+         $restaurantId = auth()->user()->restaurant->id;
+     
+         // Ottieni solo gli ordini relativi al ristorante specifico
+         $products = Product::where('restaurant_id', $restaurantId)
+             ->whereHas('orders', function ($query) use ($id) {
+                 $query->where('id', $id);
+             })
+             ->with(['orders' => function ($query) use ($id) {
+                 $query->where('id', $id);
+             }])
+             ->get();
+     
+         return view("admin.orders.show", compact("products"));
+     }
+
     public function edit(Order $order)
     {
         //
