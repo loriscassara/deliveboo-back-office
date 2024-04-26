@@ -6,10 +6,10 @@
             @foreach ($products as $product)
                 <div class="col-sm-12 col-md-3">
                     <div class="card border-green my-1">
-                        <div class="card-header bg-green text-white fw-bold fs-5">{{ $product->name }}</div>
+                        <div class="card-header bg-green text-white fw-bold fs-5 text-center">{{ $product->name }}</div>
                         <div class="card-body d-flex">
                             @if ($product->image)
-                            <img src="{{ asset('storage/' . $product->image) }}" class="card-img-top rounded"
+                            <img src="{{ asset('storage/' . $product->image) }}" class="card-img-top rounded-circle"
                             alt="{{ $product->name }}">
                             @endif
                             <p class="ps-3 pt-5">{{ $product->description }}</p>

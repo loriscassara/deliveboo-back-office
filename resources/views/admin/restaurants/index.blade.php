@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-sm-12 col-md-5">
                 <div class="card border-green">
-                    <div class="card-header bg-green text-white fw-bold fs-4">{{ __('Benvenuto nella tua area riservata!') }}</div>
+                    <div class="card-header bg-green text-white fw-bold fs-4 text-center">{{ __('Benvenuto nella tua area riservata!') }}</div>
 
                     <div class="card-body text-center">
                         @if (session('status'))

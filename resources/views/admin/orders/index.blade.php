@@ -4,7 +4,7 @@
 <div class="container-fluid mt-4">
     <div class="row justify-content-center">
         <table class="table rounded-2 table-striped table-hover w-100 m-auto">
-            <thead>
+            <thead >
                 <tr>
                     <th class="fs-4 text-white" scope="col">Nome cliente</th>
                     <th class="fs-4 text-white" scope="col">Email</th>
