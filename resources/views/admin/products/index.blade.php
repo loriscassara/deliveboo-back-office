@@ -16,7 +16,7 @@
                         </div>
                         <div class="d-flex justify-content-center">
                             <a href="{{ route('admin.products.edit', $product->id) }}"
-                                class="btn btn-info mx-2 mb-2 fw-bold">Modifica</a>
+                                class="btn text-white bg-green mx-2 mb-2 fw-bold">Modifica</a>
                             <form>
                                 <button type="button" class="btn btn-danger fw-bold" data-bs-toggle="modal"
                                     data-bs-target="#exampleModal{{ $product->id }}">
