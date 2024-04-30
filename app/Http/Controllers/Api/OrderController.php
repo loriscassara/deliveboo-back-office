@@ -3,10 +3,14 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Mail\MyTestEmail;
 use App\Models\Order;
 use App\Models\Type;
 use Braintree\Gateway;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+
+
 
 class OrderController extends Controller
 {
@@ -14,7 +18,7 @@ class OrderController extends Controller
      * Display a listing of the resource.
      */
 
-   
+
     public function index()
     { {
             $types = Type::with('restaurants')->get();
@@ -38,49 +42,49 @@ class OrderController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    { {
-            // Validazione dei dati
-            $validatedData = $request->validate([
-                'name' => 'required|string',
-                'surname' => 'required|string',
-                'phone' => 'required|numeric',
-                'email' => 'required|email',
-                'address' => 'required|string',
-                'notes' => 'nullable|string',
-                'total' => 'required|numeric',
-                'paid' => 'required|',
-                // 'restaurant_id' => 'required|exists:restaurants,id', 
-                'products' => 'required|array',
-                'products.*.id' => 'required|exists:products,id',
-                'products.*.item_quantity' => 'required|integer|min:1',
-            ]);
+    {
+        // Validazione dei dati
+        $validatedData = $request->validate([
+            'name' => 'required|string',
+            'surname' => 'required|string',
+            'phone' => 'required|numeric',
+            'email' => 'required|email',
+            'address' => 'required|string',
+            'notes' => 'nullable|string',
+            'total' => 'required|numeric',
+            'paid' => 'required|',
+            'products' => 'required|array',
+            'products.*.id' => 'required|exists:products,id',
+            'products.*.item_quantity' => 'required|integer|min:1',
+        ]);
 
-            // Crea un nuovo ordine
-            $order = new Order();
-            $order->name = $validatedData['name'];
-            $order->surname = $validatedData['surname'];
-            $order->phone = $validatedData['phone'];
-            $order->email = $validatedData['email'];
-            $order->address = $validatedData['address'];
-            $order->notes = ($validatedData['notes'])? $validatedData['notes']:" ";
-            $order->total = $validatedData['total'];
-            $order->paid = $validatedData['paid'];
+        // Crea un nuovo ordine
+        $order = new Order();
+        $order->name = $validatedData['name'];
+        $order->surname = $validatedData['surname'];
+        $order->phone = $validatedData['phone'];
+        $order->email = $validatedData['email'];
+        $order->address = $validatedData['address'];
+        $order->notes = ($validatedData['notes']) ? $validatedData['notes'] : " ";
+        $order->total = $validatedData['total'];
+        $order->paid = $validatedData['paid'];
 
+        $order->save();
 
-
-            $order->save();
-
-            // Aggiungi i prodotti all'ordine
-            foreach ($validatedData['products'] as $product) {
-                $order->products()->attach($product['id'], ['item_quantity' => $product['item_quantity']]);
-            }
-
-            // Ritorna una risposta JSON per confermare l'avvenuto salvataggio dei dati
-            return response()->json(['message' => 'Ordine creato con successo'], 200);
+        // Aggiungi i prodotti all'ordine
+        foreach ($validatedData['products'] as $product) {
+            $order->products()->attach($product['id'], ['item_quantity' => $product['item_quantity']]);
         }
 
-    }
+        // Estrae l'email dall'array dei dati validati
+        $email = $validatedData['email'];
 
+        // Invia l'email utilizzando l'email estratta
+        Mail::to($email)->send(new MyTestEmail($order));
+
+        // Ritorna una risposta JSON per confermare l'avvenuto salvataggio dei dati
+        return response()->json(['message' => 'Ordine creato con successo'], 200);
+    }
 
     /**
      * Display the specified resource.
